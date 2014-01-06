@@ -1,0 +1,29 @@
+
+<!--
+<ul class="mobile-dsp-list">
+    <a href="#/go-to-dsp/{{dsp.id}}" data-ng-repeat="dsp in dsps">
+        <li class="md-pad-horizontal">
+            <h3>{{dsp.name}}</h3>
+            <p>{{dsp.url}}</p>
+        </li>
+    </a>
+</ul>
+-->
+    <ul class="mobile-dsp-list-tiles">
+        <a>
+            <li class="dsp" hm-tap="singleTap(dsp)" hm-hold="hold(dsp)" data-ng-repeat="dsp in dsps">
+                <div>
+                    <h3 class="skinny">{{dsp.name}}</h3>
+                    <!-- <p>{{dsp.url}}</p> -->
+
+                </div>
+                <!--
+                <div data-ng-show="dsp.modes.currentMode == 1 ? true : false">
+                    <h3 class="skinny">Settings</h3>
+                    <p>{{dsp.name}}</p>
+                </div>
+                -->
+            </li>
+        </a>
+    </ul>
+

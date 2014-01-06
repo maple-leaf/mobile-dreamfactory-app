@@ -1,0 +1,54 @@
+$headingMarginTop: 10px;
+
+
+
+@for $i from 1 through 6 {
+
+  h#{$i} {
+    color: $lightcolor;
+    margin-top: $headingMarginTop;
+  }
+}
+
+p {
+  color: $lightcolor;
+}
+
+
+label {
+  display: block;
+  color: $lightcolor;
+}
+
+
+
+
+.dark-text {
+
+  @for $i from 1 through 6 {
+    h#{$i} {
+      color: $darkcolor;
+    }
+  }
+
+  p {
+    color: $darkcolor;
+  }
+
+
+  label {
+    color: $darkcolor;
+    font-weight: 300;
+  }
+}
+
+.pageText {
+  color: $lightmediumcoloralt;
+  text-align: left;
+
+  h2 {
+    color: $lightmediumcolor;
+  }
+
+}
+
