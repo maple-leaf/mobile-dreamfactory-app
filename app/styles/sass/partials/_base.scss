@@ -38,7 +38,7 @@ body {
 }
 
 #footer {
-  background-color: none;
+  background: none;
   height: 60px;
   left: 0;
   position: fixed;
@@ -252,17 +252,17 @@ ul.mobile-dsp-list-tiles {
       background: rgba(0,0,0,0);
     }
 
-    li.app, .test{
+    li.app{
 
       background-color: $tileappbackgroundcolor;
     }
 
-    li.group, .test{
+    li.group{
 
       background-color: $tilegroupbackgroundcolor;
     }
 
-    li.dsp, .test{
+    li.dsp{
       background-color: $tiledspbackgroundcolor;
     }
 

@@ -2,14 +2,18 @@
 
 
 angular.module('lpApp')
-    .animation('.test', [function() {
+    .animation('.test', function() {
         return {
+
             enter: function(element, done) {
 
-                console.log(element);
-                console.log('fired');
+                jQuery(element).css({
+                    background: 'rgba(0,0,0,0)'
+                });
+
+
                 jQuery(element).animate({
-                    opacity: '1'
+                    background: 'rgba(0,0,0,1)'
                 }, done);
             },
 
@@ -18,4 +22,4 @@ angular.module('lpApp')
 
 
         }
-    }]);
+    });

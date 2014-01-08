@@ -56,7 +56,7 @@
 
         <ul class="mobile-dsp-list-tiles" id="panel-{{panel.current}}" data-ng-repeat="panel in panelsObj.panels" data-ng-show="currentPanel === {{panel.current}}">
             <a data-ng-repeat="group in panel.appGroups">
-                <li class="test" data-ng-class="group.id ? 'group' : 'dummyTile'" hm-tap="singleTapGroup(group)">
+                <li class="test" data-ng-class="group.id ? '' : 'dummyTile'" hm-tap="singleTapGroup(group)">
                     <div>
                         <h3 class="skinny">{{group.name}}</h3>
 
@@ -64,7 +64,7 @@
                 </li>
             </a>
             <a data-ng-repeat="app in panel.apps">
-                <li class="test" data-ng-class="app.id ? 'app' : 'dummyTile'"  hm-tap="singleTapApp(app)" hm-hold="holdApp(app)" >
+                <li class="test" data-ng-class="app.id ? '' : 'dummyTile'"  hm-tap="singleTapApp(app)" hm-hold="holdApp(app)" >
                     <div>
                         <h3 class="skinny">{{app.name}}</h3>
 

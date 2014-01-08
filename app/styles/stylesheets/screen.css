@@ -369,15 +369,15 @@ ul.mobile-dsp-list-tiles a li.dummyTile {
   background: rgba(0, 0, 0, 0);
 }
 /* line 255, ../sass/partials/_base.scss */
-ul.mobile-dsp-list-tiles a li.app, ul.mobile-dsp-list-tiles a .test {
+ul.mobile-dsp-list-tiles a li.app {
   background-color: rgba(255, 255, 255, 0.25);
 }
 /* line 260, ../sass/partials/_base.scss */
-ul.mobile-dsp-list-tiles a li.group, ul.mobile-dsp-list-tiles a .test {
+ul.mobile-dsp-list-tiles a li.group {
   background-color: rgba(255, 255, 255, 0.25);
 }
 /* line 265, ../sass/partials/_base.scss */
-ul.mobile-dsp-list-tiles a li.dsp, ul.mobile-dsp-list-tiles a .test {
+ul.mobile-dsp-list-tiles a li.dsp {
   background-color: rgba(255, 255, 255, 0.25);
 }
 /* line 269, ../sass/partials/_base.scss */
