@@ -2,8 +2,9 @@
 
 
 angular.module('lpApp')
-    .controller('LaunchPadCtrl', ['$scope', '$rootScope', '$location', 'getGroups', 'getDSPInfo', 'AppLaunchService', 'AppStrings', 'ObjectService',
-        function ($scope, $rootScope, $location, getGroups, getDSPInfo, AppLaunchService, AppStrings, ObjectService) {
+    .controller('LaunchPadCtrl', ['$scope', '$rootScope', '$location', 'getGroups', 'getDSPInfo', 'AppLaunchService', 'AppStrings', 'ObjectService', 'UIScrollService',
+        function ($scope, $rootScope, $location, getGroups, getDSPInfo, AppLaunchService, AppStrings, ObjectService, UIScrollService) {
+
 
             // Set App Location
             $rootScope.appLocation = 'Launchpad';
@@ -15,25 +16,36 @@ angular.module('lpApp')
 
             $scope.pageText = ObjectService.extend(AppStrings.getLaunchPadStrings, $scope.overridePageStrings);
 
+            $scope.panelsObj = UIScrollService.divyUpApps(getGroups.Ungrouped);
 
-            $scope.groups = getGroups;
+            $scope.currentPanel = $scope.panelsObj.currentPanel;
+            console.log($scope.currentPanel);
 
-
-            // PUBLIC API
+                // PUBLIC API
 
             $scope.singleTapGroup = function (group) {
 
-                $scope.$broadcast('tap:single:group', group)
+                group.id ? $scope.$broadcast('tap:single:group', group) : false;
             };
 
             $scope.singleTapApp = function (app) {
 
-                $scope.$broadcast('tap:single:app', app);
+                app.id ? $scope.$broadcast('tap:single:app', app) : false;
             };
 
             $scope.holdApp = function(app) {
 
-                $scope.$broadcast('hold:app', app);
+                app.id ? $scope.$broadcast('hold:app', app) : false;
+            };
+
+            $scope.swipeRight = function() {
+
+                $scope.$broadcast('swipe:right');
+            };
+
+            $scope.swipeLeft = function() {
+
+                $scope.$broadcast('swipe:left');
             };
 
 
@@ -74,6 +86,24 @@ angular.module('lpApp')
                 };
 
                 $scope._launchAppDetail(group, app);
+            });
+
+            $scope.$on('swipe:right', function(e) {
+
+                if ($scope.currentPanel === 0) {
+                    return;
+                }
+
+                $scope.currentPanel--;
+            });
+
+            $scope.$on('swipe:left', function(e) {
+
+                if ($scope.currentPanel === $scope.panelsObj.panels.length - 1) {
+                    return;
+                }
+
+                $scope.currentPanel++;
             });
 
         }])
@@ -202,7 +232,4 @@ angular.module('lpApp')
 
                 $scope._moreDetail();
             });
-
-
-
         }]);

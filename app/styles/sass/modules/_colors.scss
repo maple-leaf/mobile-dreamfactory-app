@@ -1,4 +1,8 @@
-$lightcolor: #f2f2f2;
+/*
+General Purpose Colors
+*/
+
+$lightcolor: #fff;
 $lightmediumcolor: #c2c2c2;
 $lightmediumcoloralt: #a2a2a2;
 $mediumcolor: #4d4d4d;
@@ -6,3 +10,25 @@ $darkmediumcolor: #2e2e2e;
 $darkcolor: #1a1a1a;
 $iconhovercolor: #db9200;
 $darkshadowcolor: #000000;
+
+
+$lightopacity75: rgba(255, 255, 255, .75);
+$lightopacity50: rgba(255, 255, 255, .5);
+$lightopacity25: rgba(255, 255, 255, .25);
+
+/*
+Specific Colors
+*/
+
+
+
+
+
+/*
+Tile Colors
+*/
+$tiletitlecolor: #fff;
+$tiletitlemargin: 0;
+$tileappbackgroundcolor: $lightopacity25;
+$tilegroupbackgroundcolor: $lightopacity25;
+$tiledspbackgroundcolor: $lightopacity25;

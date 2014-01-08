@@ -33,12 +33,13 @@
 </a>
 </ul>
 -->
+        <!--
     <ul class="mobile-dsp-list-tiles">
         <a>
             <li  class="group" hm-tap="singleTapGroup(group)" data-ng-repeat="group in groups.appGroups">
                 <div>
                     <h3 class="skinny">{{group.name}}</h3>
-                    <!-- <p>{{dsp.url}}</p> -->
+
                 </div>
             </li>
         </a>
@@ -46,8 +47,30 @@
             <li class="app" hm-tap="singleTapApp(app)" hm-hold="holdApp(app)" data-ng-repeat="app in groups.Ungrouped">
                 <div>
                     <h3 class="skinny">{{app.name}}</h3>
-                    <!-- <p>{{dsp.url}}</p> -->
+
                 </div>
             </li>
         </a>
     </ul>
+-->
+
+        <ul class="mobile-dsp-list-tiles" id="panel-{{panel.current}}" data-ng-repeat="panel in panelsObj.panels" data-ng-show="currentPanel === {{panel.current}}">
+            <a data-ng-repeat="group in panel.appGroups">
+                <li class="test" data-ng-class="group.id ? 'group' : 'dummyTile'" hm-tap="singleTapGroup(group)">
+                    <div>
+                        <h3 class="skinny">{{group.name}}</h3>
+
+                    </div>
+                </li>
+            </a>
+            <a data-ng-repeat="app in panel.apps">
+                <li class="test" data-ng-class="app.id ? 'app' : 'dummyTile'"  hm-tap="singleTapApp(app)" hm-hold="holdApp(app)" >
+                    <div>
+                        <h3 class="skinny">{{app.name}}</h3>
+
+                    </div>
+                </li>
+            </a>
+        </ul>
+
+

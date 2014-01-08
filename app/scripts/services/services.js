@@ -802,4 +802,90 @@ angular.module('lpApp')
                 return impl.apply(this, arguments);
             };
         };
+    }])
+    .factory('UIScrollService', [function() {
+        return {
+
+
+            tileWidth: 110,
+            tileHeight: 110,
+            numTilesAcross: 3,
+
+
+            getWindowHeight: function() {
+
+                return $(window).outerHeight() - 150;
+            },
+
+            getWindowWidth: function() {
+
+                return $('.tiles-container').outerWidth();
+            },
+
+            getGCD: function(x, y) {
+                while (y != 0) {
+                    var z = x % y;
+                    x = y;
+                    y = z;
+                }
+                return x;
+            },
+
+            getNumTilesHorizontal: function() {
+
+                return Math.floor(this.getWindowWidth() / this.tileWidth);
+            },
+
+            getNumTilesVertical: function() {
+
+                return Math.floor(this.getWindowHeight() / this.tileWidth);
+            },
+
+
+            determineSquares: function() {
+
+                return (this.getNumTilesHorizontal() * this.getNumTilesVertical());
+            },
+
+            divyUpApps: function(items) {
+
+                var offset = this.determineSquares(),
+                    numToSplit = Math.ceil(items.length / offset),
+                    out = [],
+                    i = 0,
+                    panelsObj;
+
+                while (i < numToSplit) {
+                    var panel = {
+                        current: i,
+                        next: i + 1,
+                        apps: []
+                    };
+                    panel.apps = items.splice(0, offset);
+
+                    if (panel.apps.length != offset) {
+                        while (panel.apps.length < offset) {
+                            var dummyObject = {
+                                id: false
+                            };
+
+                            panel.apps.push(dummyObject);
+                        }
+                    }
+
+                    out.push(panel);
+                    i ++;
+                }
+
+                panelsObj = {
+                    currentPanel: 0,
+                    panels: out
+                };
+
+                return panelsObj;
+
+
+            }
+
+        }
     }]);

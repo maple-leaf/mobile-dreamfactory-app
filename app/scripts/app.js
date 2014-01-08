@@ -3,6 +3,7 @@
 angular.module('lpApp', [
         'ngRoute',
         'ngResource',
+        'ngAnimate',
         'hmTouchEvents'
     ])
     .config(['$routeProvider', function ($routeProvider) {
@@ -289,6 +290,7 @@ angular.module('lpApp', [
                     getGroups: ['AppStorageService', function(AppStorageService) {
 
                         return AppStorageService.Apps.get();
+
                     }],
 
                     getDSPInfo: ['AppStorageService', function(AppStorageService) {
