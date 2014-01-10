@@ -53,18 +53,17 @@
         </a>
     </ul>
 -->
-
-        <ul class="mobile-dsp-list-tiles" id="panel-{{panel.current}}" data-ng-repeat="panel in panelsObj.panels" data-ng-show="currentPanel === {{panel.current}}">
-            <a data-ng-repeat="group in panel.appGroups">
-                <li class="test" data-ng-class="group.id ? '' : 'dummyTile'" hm-tap="singleTapGroup(group)">
+        <ul class="mobile-dsp-list-tiles panel-swipe" id="panel-{{panel.current}}" data-ng-repeat="panel in panelsObj.panels" data-ng-show="currentPanel === {{panel.current}}">
+            <a>
+                <li data-ng-repeat="group in panel.groups" data-ng-class="group.id ? 'group' : 'dummyTile'" hm-tap="singleTapGroup(group)">
                     <div>
                         <h3 class="skinny">{{group.name}}</h3>
 
                     </div>
                 </li>
             </a>
-            <a data-ng-repeat="app in panel.apps">
-                <li class="test" data-ng-class="app.id ? '' : 'dummyTile'"  hm-tap="singleTapApp(app)" hm-hold="holdApp(app)" >
+            <a>
+                <li data-ng-repeat="app in panel.apps" data-ng-class="app.id ? 'app' : 'dummyTile'"  hm-tap="singleTapApp(app)" hm-hold="holdApp(app)" >
                     <div>
                         <h3 class="skinny">{{app.name}}</h3>
 

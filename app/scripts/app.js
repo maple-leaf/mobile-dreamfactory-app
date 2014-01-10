@@ -1,11 +1,7 @@
 'use strict';
 
-angular.module('lpApp', [
-        'ngRoute',
-        'ngResource',
-        'ngAnimate',
-        'hmTouchEvents'
-    ])
+
+var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTouchEvents'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/', {
@@ -289,7 +285,11 @@ angular.module('lpApp', [
                 resolve: {
                     getGroups: ['AppStorageService', function(AppStorageService) {
 
-                        return AppStorageService.Apps.get();
+                        var apps = AppStorageService.Apps.get();
+
+                        console.log(apps);
+
+                        return apps;
 
                     }],
 
@@ -305,47 +305,8 @@ angular.module('lpApp', [
                 resolve: {
                     getApps: ['$route', 'AppStorageService', function($route, AppStorageService) {
 
-                        var group = AppStorageService.Apps.getAppsFromGroup($route.current.params.groupId);
+                        return AppStorageService.Apps.getAppsFromGroup($route.current.params.groupId);
 
-
-                        angular.forEach(group.apps, function(obj) {
-
-                            if (!obj['modes']) {
-
-                                obj['modes'] = {
-                                    length: 0,
-                                    currentMode: 0,
-                                    add: function(mode) {
-                                        Array.prototype.push.call(this, mode);
-
-                                    },
-                                    next: function() {
-                                        if (this.currentMode === (this.length-1)) {
-                                            this.currentMode = 0;
-                                        }
-                                        else {
-                                            this.currentMode++
-                                        }
-                                    },
-
-                                    previous: function() {
-                                        if (this.currentMode === 0) {
-                                            this.currentMode = this.length -1
-                                        }
-                                        else {
-                                            this.currentMode--
-                                        }
-                                    }
-                                }
-
-                                obj.modes.add('Home');
-                                obj.modes.add('Description');
-                            }
-
-                        });
-
-
-                        return group;
                     }],
 
                     getDSPInfo: ['AppStorageService', function(AppStorageService) {
@@ -469,6 +430,7 @@ angular.module('lpApp', [
             }
         }]);
     }])
+
     .run(['$route', '$rootScope', '$location', '$http', 'UserService', 'AppStorageService',
         function ($route, $rootScope, $location, $http, UserService, AppStorageService) {
 

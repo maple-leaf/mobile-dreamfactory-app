@@ -359,28 +359,30 @@ ul.mobile-dsp-list-tiles {
   padding: 0;
   margin: 0 auto;
   text-align: left;
+  position: absolute;
+  top: 50px;
 }
-/* line 247, ../sass/partials/_base.scss */
+/* line 252, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a {
   text-decoration: none;
 }
-/* line 250, ../sass/partials/_base.scss */
+/* line 255, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li.dummyTile {
   background: rgba(0, 0, 0, 0);
 }
-/* line 255, ../sass/partials/_base.scss */
+/* line 260, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li.app {
   background-color: rgba(255, 255, 255, 0.25);
 }
-/* line 260, ../sass/partials/_base.scss */
+/* line 265, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li.group {
   background-color: rgba(255, 255, 255, 0.25);
 }
-/* line 265, ../sass/partials/_base.scss */
+/* line 270, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li.dsp {
   background-color: rgba(255, 255, 255, 0.25);
 }
-/* line 269, ../sass/partials/_base.scss */
+/* line 274, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li {
   list-style: none;
   width: 100px;
@@ -390,75 +392,76 @@ ul.mobile-dsp-list-tiles a li {
   margin: 5px;
   padding: 5px;
   vertical-align: top;
+  background: rgba(255, 255, 255, 0.25);
 }
-/* line 284, ../sass/partials/_base.scss */
+/* line 290, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h1 {
   color: white;
   margin: 0;
   font-weight: 900;
   font-size: 22px;
 }
-/* line 284, ../sass/partials/_base.scss */
+/* line 290, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h2 {
   color: white;
   margin: 0;
   font-weight: 900;
   font-size: 19px;
 }
-/* line 284, ../sass/partials/_base.scss */
+/* line 290, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h3 {
   color: white;
   margin: 0;
   font-weight: 900;
   font-size: 16px;
 }
-/* line 284, ../sass/partials/_base.scss */
+/* line 290, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h4 {
   color: white;
   margin: 0;
   font-weight: 900;
   font-size: 13px;
 }
-/* line 284, ../sass/partials/_base.scss */
+/* line 290, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h5 {
   color: white;
   margin: 0;
   font-weight: 900;
   font-size: 10px;
 }
-/* line 284, ../sass/partials/_base.scss */
+/* line 290, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h6 {
   color: white;
   margin: 0;
   font-weight: 900;
   font-size: 7px;
 }
-/* line 293, ../sass/partials/_base.scss */
+/* line 299, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li p {
   font-weight: 200;
   font-size: 10px;
 }
-/* line 298, ../sass/partials/_base.scss */
+/* line 304, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li .skinny {
   font-weight: 300;
 }
 
 @media screen and (max-width: 992px) {
-  /* line 311, ../sass/partials/_base.scss */
+  /* line 317, ../sass/partials/_base.scss */
   .tiles-container {
     width: 700px;
     margin: auto;
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 321, ../sass/partials/_base.scss */
+  /* line 327, ../sass/partials/_base.scss */
   .tiles-container {
     width: 460px;
     margin: auto;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 329, ../sass/partials/_base.scss */
+  /* line 335, ../sass/partials/_base.scss */
   .tiles-container {
     width: 340px;
     margin: auto;
@@ -466,43 +469,65 @@ ul.mobile-dsp-list-tiles a li .skinny {
   }
 }
 @media screen and (max-width: 320px) {
-  /* line 338, ../sass/partials/_base.scss */
+  /* line 344, ../sass/partials/_base.scss */
   .tiles-container {
     width: 295px;
     margin: auto;
     text-align: center;
   }
 
-  /* line 348, ../sass/partials/_base.scss */
+  /* line 354, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li {
     width: 85px;
     height: 85px;
   }
 }
-/* line 357, ../sass/partials/_base.scss */
+/* line 363, ../sass/partials/_base.scss */
 .dark {
   background: #1a1a1a;
   border: 1px solid #4d4d4d;
 }
 
-/* line 366, ../sass/partials/_base.scss */
+/* line 372, ../sass/partials/_base.scss */
 .table tbody tr td {
   border-top: 1px solid #2e2e2e;
   color: #c2c2c2;
 }
 
-/* line 374, ../sass/partials/_base.scss */
+/* line 380, ../sass/partials/_base.scss */
 hr {
   margin: 0;
   border-top: 1px solid #4d4d4d;
 }
 
-/* line 380, ../sass/partials/_base.scss */
+/* line 386, ../sass/partials/_base.scss */
 .navbar-dreamfactory {
   background: #1a1a1a;
   border: none;
 }
 
+  /*
+.panel-swipe {
+  -webkit-transition:1s linear all;
+  transition:1s linear all;
+  opacity:1;
+  transform: translateX(0px);
+}
+
+.panel-swipe.ng-hide {
+  opacity:0;
+  transform: scale3d(0, 0, 1);
+  transform: translateX(-500px);
+}
+
+.panel-swipe.ng-hide-add, .my-elm.ng-hide-remove {
+  /* this needs to be here to make it visible during the animation
+     since the .ng-hide class is already on the element rendering
+     it as hidden. */
+/*
+  display:block!important;
+}
+*/
 /* line 7, ../sass/partials/_typography.scss */
 h1 {
   color: white;

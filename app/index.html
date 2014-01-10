@@ -25,7 +25,7 @@
 <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js"> <!--<![endif]-->
-<html>
+<html data-ng-app="lpApp">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,11 +52,10 @@
 </head>
 <body ontouchstart="">
 
-<div data-ng-app="lpApp">
+<div>
 
     <nav class="navbar navbar-default navbar-fixed-top navbar-dreamfactory">
         <img src="img/logo/df_logo_txt.png" width="140px" style="margin-top: 14px; margin-left: 10px;"/>
-        <hr style="margin-top: 5px; margin-left: 10px; margin-right: 10px;"/>
     </nav>
 
     <div id="wrap">
@@ -139,12 +138,12 @@
 <script src="bower_components/jquery/jquery.js"></script>
 <script src="bower_components/hammerjs/hammer.js"></script>
 <script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/angular-resource/angular-resource.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/angular-hammer/angular-hammer.js"></script>
-<script src="bower_components/angular-animate/angular-animate.js"></script>
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
@@ -157,20 +156,21 @@
 <script src="scripts/services/services.js"></script>
 <script src="scripts/directives/widget.js"></script>
 <script src="scripts/animations/animations.js"></script>
+<script src="scripts/lib/transform2d.js"></script>
 <!-- endbuild -->
 
 
-<!--
+
         <script type="text/javascript" src="cordova.js"></script>
 
         <!-- build:js scripts/index.js -->
-<!--
+
         <script type="text/javascript" src="scripts/index.js"></script>
         <!-- endbuild -->
-<!--
+
         <script type="text/javascript">
             app.initialize();
         </script>
--->
+
 </body>
 </html>

@@ -849,22 +849,42 @@ angular.module('lpApp')
 
             divyUpApps: function(items) {
 
+                var groups = items.appGroups ? items.appGroups : [],
+                    apps = items.Ungrouped ? items.Ungrouped : [],
+                    groupApps = items.apps ? items.apps : [];
+
+
                 var offset = this.determineSquares(),
-                    numToSplit = Math.ceil(items.length / offset),
+                    numToSplit = Math.ceil((groups.length + apps.length + groupApps.length) / offset),
                     out = [],
                     i = 0,
                     panelsObj;
+
 
                 while (i < numToSplit) {
                     var panel = {
                         current: i,
                         next: i + 1,
-                        apps: []
+                        apps: [],
+                        groups: []
                     };
-                    panel.apps = items.splice(0, offset);
 
-                    if (panel.apps.length != offset) {
-                        while (panel.apps.length < offset) {
+                    if (groups.length > 0) {
+                        panel.groups = groups.splice(0, offset);
+                    }
+
+                    if (apps.length > 0) {
+                        panel.apps = apps.splice(0, offset);
+                    }
+
+                    if (groupApps.length > 0) {
+                        panel.apps = groupApps.splice(0, offset);
+                    }
+
+
+
+                    if ((panel.groups.length + panel.apps.length) != offset) {
+                        while ((panel.groups.length + panel.apps.length) < offset) {
                             var dummyObject = {
                                 id: false
                             };
@@ -882,10 +902,10 @@ angular.module('lpApp')
                     panels: out
                 };
 
+                console.log(panelsObj);
+
                 return panelsObj;
 
-
             }
-
         }
     }]);

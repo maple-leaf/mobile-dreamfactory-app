@@ -2,8 +2,8 @@
 
 
 angular.module('lpApp')
-    .controller('LaunchPadCtrl', ['$scope', '$rootScope', '$location', 'getGroups', 'getDSPInfo', 'AppLaunchService', 'AppStrings', 'ObjectService', 'UIScrollService',
-        function ($scope, $rootScope, $location, getGroups, getDSPInfo, AppLaunchService, AppStrings, ObjectService, UIScrollService) {
+    .controller('LaunchPadCtrl', ['$scope', '$rootScope', '$location', '$timeout', 'getGroups', 'getDSPInfo', 'AppLaunchService', 'AppStrings', 'ObjectService', 'UIScrollService',
+        function ($scope, $rootScope, $location, $timeout, getGroups, getDSPInfo, AppLaunchService, AppStrings, ObjectService, UIScrollService) {
 
 
             // Set App Location
@@ -16,10 +16,8 @@ angular.module('lpApp')
 
             $scope.pageText = ObjectService.extend(AppStrings.getLaunchPadStrings, $scope.overridePageStrings);
 
-            $scope.panelsObj = UIScrollService.divyUpApps(getGroups.Ungrouped);
+            $scope.panelsObj = UIScrollService.divyUpApps(getGroups);
 
-            $scope.currentPanel = $scope.panelsObj.currentPanel;
-            console.log($scope.currentPanel);
 
                 // PUBLIC API
 
@@ -36,16 +34,6 @@ angular.module('lpApp')
             $scope.holdApp = function(app) {
 
                 app.id ? $scope.$broadcast('hold:app', app) : false;
-            };
-
-            $scope.swipeRight = function() {
-
-                $scope.$broadcast('swipe:right');
-            };
-
-            $scope.swipeLeft = function() {
-
-                $scope.$broadcast('swipe:left');
             };
 
 
@@ -88,33 +76,19 @@ angular.module('lpApp')
                 $scope._launchAppDetail(group, app);
             });
 
-            $scope.$on('swipe:right', function(e) {
-
-                if ($scope.currentPanel === 0) {
-                    return;
-                }
-
-                $scope.currentPanel--;
-            });
-
-            $scope.$on('swipe:left', function(e) {
-
-                if ($scope.currentPanel === $scope.panelsObj.panels.length - 1) {
-                    return;
-                }
-
-                $scope.currentPanel++;
-            });
 
         }])
-    .controller('LaunchPadGroupCtrl', ['$scope', '$rootScope', '$location', 'getApps', 'getDSPInfo', 'AppLaunchService', 'AppStrings', 'ObjectService',
-        function ($scope, $rootScope, $location, getApps, getDSPInfo, AppLaunchService, AppStrings, ObjectService) {
+    .controller('LaunchPadGroupCtrl', ['$scope', '$rootScope', '$location', 'getApps', 'getDSPInfo', 'AppLaunchService', 'AppStrings', 'ObjectService', 'UIScrollService',
+        function ($scope, $rootScope, $location, getApps, getDSPInfo, AppLaunchService, AppStrings, ObjectService, UIScrollService) {
 
             // Set App Location
             $rootScope.appLocation = 'LaunchPad Group';
 
+
+
             $scope.overridePageStrings = {
-                title: getDSPInfo.name + ': ' + getApps.name,
+                title: getDSPInfo.name + ': ',
+                group: getApps.name,
                 description: ''
             };
 
@@ -123,6 +97,8 @@ angular.module('lpApp')
 
 
             // Variables
+            $scope.panelsObj = UIScrollService.divyUpApps(getApps);
+
             $scope.group = getApps;
 
 
@@ -146,18 +122,7 @@ angular.module('lpApp')
                 AppLaunchService.launchApp(app);
             };
 
-            $scope._changeModeForward = function (app) {
-
-                app.modes.next();
-            };
-
-            $scope._changeModeBackward = function (app) {
-
-                app.modes.previous();
-            };
-
             $scope._launchAppDetail = function(group, app) {
-
 
                 $location.url('/app-detail/'+ group.id + '/' + app.id);
             };
@@ -166,7 +131,7 @@ angular.module('lpApp')
             // MESSAGES
             $scope.$on('tap:single', function (e, app) {
 
-                    $scope._launchApp(app);
+                $scope._launchApp(app);
             });
 
 
