@@ -2,15 +2,29 @@
 
 
 angular.module('lpApp')
-    .controller('ProfileCtrl', ['$scope', '$rootScope', 'userInfo', 'userApps', 'UserService', 'StringService', 'MessageService',
-        function ($scope, $rootScope, userInfo, userApps, UserService, StringService, MessageService) {
+    .controller('ProfileCtrl', ['$scope', '$rootScope', 'userInfo', 'userApps', 'UserService', 'StringService', 'MessageService', 'AppStrings', 'ObjectService',
+        function ($scope, $rootScope, userInfo, userApps, UserService, StringService, MessageService, AppStrings, ObjectService) {
 
             // Set Location Bar
             $rootScope.appLocation = 'Profile';
 
+            $scope.overridePageStrings = {
+                description: ''
+            };
+
+
+
+            $scope.pageText = ObjectService.extend(AppStrings.getProfileStrings, $scope.overridePageStrings);
+
 
             $scope.user = userInfo;
             $scope.apps = userApps;
+
+            $scope.panelsObj = {
+                panels: [{id: 0}, {id: 1}, {id: 2}, {id: 4}]
+            };
+
+
 
 
             // Public API

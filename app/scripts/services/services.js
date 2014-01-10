@@ -112,6 +112,11 @@ angular.module('lpApp')
             getPreviousSelectedDSPStrings: {
                 title: 'Connect to a previous DSP\'s',
                 description: 'Select a DreamFactory Services Platforms you have previously connected to.'
+            },
+
+            getProfileStrings: {
+                title: 'Profile',
+                description: 'Edit user profile'
             }
         }
     }])
@@ -880,8 +885,6 @@ angular.module('lpApp')
                     if (groupApps.length > 0) {
                         panel.apps = groupApps.splice(0, offset);
                     }
-
-
 
                     if ((panel.groups.length + panel.apps.length) != offset) {
                         while ((panel.groups.length + panel.apps.length) < offset) {
