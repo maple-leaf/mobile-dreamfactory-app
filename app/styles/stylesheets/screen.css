@@ -506,13 +506,14 @@ hr {
   border: none;
 }
 
-  /*
+/* line 392, ../sass/partials/_base.scss */
 .panel-swipe {
-  -webkit-transition:1s linear all;
-  transition:1s linear all;
-  opacity:1;
-  transform: translateX(0px);
+  transform: translateZ(0px);
+  -moz-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
+
+  /*
 
 .panel-swipe.ng-hide {
   opacity:0;

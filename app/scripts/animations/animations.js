@@ -104,7 +104,7 @@ lpApp.animation('.panel-swipe', ['$rootScope', function($rootScope) {
             if ($rootScope.panelSwipe === 'left') {
                 jQuery(element).css({
                     opacity: 1,
-                    transform: 'scale3d(1, 1, 1)'
+                    transform: 'scale3d(1, 1, 1)',
                 });
 
                 jQuery(element).animate({
