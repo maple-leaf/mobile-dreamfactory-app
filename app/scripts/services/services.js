@@ -601,7 +601,7 @@ angular.module('lpApp')
 
             launchApp: function(app) {
 
-                if (window.open(app.launch_url, app.name, 'location=no')) {
+                if (window.open(app.launch_url, app.name, 'location=no,toolbar=yes')) {
                     return true;
                 };
 

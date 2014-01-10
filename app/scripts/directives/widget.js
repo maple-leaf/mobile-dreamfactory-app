@@ -13,6 +13,14 @@ angular.module('lpApp')
             template:'<div class="pageText"><h2>{{title}}<small>{{group}}</small></h2><p>{{description}}</p></div>'
         }
     }])
+    .directive('profileBtns', [function() {
+        return {
+            restrict: 'E',
+            scope: '@',
+            templateUrl: 'views/utitlity/forms/profile-buttons.html'
+
+        }
+    }])
     .directive('swiper', ['$rootScope', function($rootScope) {
         return {
             restrict: 'E',
