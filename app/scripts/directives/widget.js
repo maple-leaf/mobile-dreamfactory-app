@@ -18,8 +18,16 @@ angular.module('lpApp')
             restrict: 'E',
             scope: '@',
             replace: true,
-            templateUrl: 'views/utitlity/forms/profile-buttons.html',
+            templateUrl: 'views/utility/forms/profile-buttons.html',
             link: function(scope, element, attrs) {
+
+                var height = $(window).outerHeight(),
+                    btnHeight = element.outerHeight();
+
+                element.css({
+                    position: 'absolute',
+                    top: height - (btnHeight + 150)
+                })
 
             }
 
@@ -39,6 +47,8 @@ angular.module('lpApp')
                     scope.currentPanel = 0;
                 });
                 */
+
+
 
 
                 scope.swipeLeft = function() {
