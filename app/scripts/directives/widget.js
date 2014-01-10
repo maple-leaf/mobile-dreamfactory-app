@@ -17,7 +17,11 @@ angular.module('lpApp')
         return {
             restrict: 'E',
             scope: '@',
-            templateUrl: 'views/utitlity/forms/profile-buttons.html'
+            replace: true,
+            templateUrl: 'views/utitlity/forms/profile-buttons.html',
+            link: function(scope, element, attrs) {
+
+            }
 
         }
     }])
