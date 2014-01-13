@@ -517,7 +517,49 @@ hr {
 /* line 401, ../sass/partials/_base.scss */
 .form-spacer {
   display: block;
-  height: 250px;
+  height: 200px;
+}
+
+/* line 407, ../sass/partials/_base.scss */
+.btn-default {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* line 413, ../sass/partials/_base.scss */
+.input-dreamfactory {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+/* line 3, ../sass/modules/_mixins.scss */
+*::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* line 4, ../sass/modules/_mixins.scss */
+*::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* firefox 19+ */
+/* line 6, ../sass/modules/_mixins.scss */
+*:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* ie */
+/* line 7, ../sass/modules/_mixins.scss */
+input:-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* line 424, ../sass/partials/_base.scss */
+input:focus {
+  border: 1px solid rgba(255, 255, 255, 0.75) !important;
+  box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.75) !important;
 }
 
   /*

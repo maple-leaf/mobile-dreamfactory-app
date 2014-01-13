@@ -400,8 +400,33 @@ hr {
 
 .form-spacer {
   display: block;
-  height: 250px;
+  height: 200px;
 }
+
+
+.btn-default {
+  background: rgba(255,255,255, .1);
+  border: 1px solid rgba(255,255,255, .3);
+  color: $lightopacity50;
+}
+
+.input-dreamfactory {
+  background: rgba(255,255,255, .1);
+  border: 1px solid rgba(255,255,255, .3);
+  color: $lightcolor;
+
+
+
+}
+
+@include input-placeholder($lightopacity50);
+
+input:focus {
+  border: 1px solid $lightopacity75 !important;
+  box-shadow: (0px 0px 2px $lightopacity75) !important;
+}
+
+
 
 
 /*
