@@ -591,7 +591,9 @@ hr {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
-  box-shadow: 0 0 0;
+  -webkit-box-shadow: 0 0px 0 none, 0 0px none inset;
+  -moz-box-shadow: 0 0px 0 none, 0 0px none inset;
+  box-shadow: 0 0px 0 none, 0 0px none inset;
 }
 
 /* line 3, ../sass/modules/_mixins.scss */
@@ -616,7 +618,7 @@ input:-moz-placeholder {
   color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* line 442, ../sass/partials/_base.scss */
+/* line 443, ../sass/partials/_base.scss */
 input:focus {
   border: 1px solid rgba(255, 255, 255, 0.75) !important;
   box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.75) !important;

@@ -431,11 +431,12 @@ hr {
   background: rgba(255,255,255, .1);
   border: 1px solid rgba(255,255,255, .3);
   color: $lightcolor;
-  box-shadow: 0 0 0;
-
-
-
+  -webkit-box-shadow: 0 0px 0 none, 0 0px none inset;
+  -moz-box-shadow: 0 0px 0 none, 0 0px none inset;
+  box-shadow: 0 0px 0 none, 0 0px none inset;
 }
+
+
 
 @include input-placeholder($lightopacity50);
 
