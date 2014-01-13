@@ -53,6 +53,7 @@
         </a>
     </ul>
 -->
+        <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
         <ul class="mobile-dsp-list-tiles panel-swipe" id="panel-{{panel.current}}" data-ng-repeat="panel in panelsObj.panels" data-ng-show="currentPanel === {{panel.current}}">
             <a>
                 <li data-ng-repeat="group in panel.groups" data-ng-class="group.id ? 'group' : 'dummyTile'" hm-tap="singleTapGroup(group)">
@@ -71,5 +72,6 @@
                 </li>
             </a>
         </ul>
+            </div>
 
 
