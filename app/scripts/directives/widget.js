@@ -18,7 +18,47 @@ angular.module('lpApp')
             restrict: 'E',
             scope: '@',
             replace: true,
-            templateUrl: 'views/utility/forms/profile-buttons.html',
+            templateUrl: 'views/utility/buttons/profile-buttons.html',
+            link: function(scope, element, attrs) {
+
+                var height = $(window).outerHeight(),
+                    btnHeight = element.outerHeight();
+
+                element.css({
+                    position: 'absolute',
+                    top: height - (btnHeight + 150)
+                })
+
+            }
+
+        }
+    }])
+    .directive('dspSettingsBtns', [function() {
+        return {
+            restrict: 'E',
+            scope: '@',
+            replace: true,
+            templateUrl: 'views/utility/buttons/dsp-settings-buttons.html',
+            link: function(scope, element, attrs) {
+
+                var height = $(window).outerHeight(),
+                    btnHeight = element.outerHeight();
+
+                element.css({
+                    position: 'absolute',
+                    top: height - (btnHeight + 150)
+                })
+
+            }
+
+        }
+    }])
+    .directive('appDetailBtns', [function() {
+        return {
+            restrict: 'E',
+            scope: '@',
+            replace: true,
+            templateUrl: 'views/utility/buttons/app-detail-buttons.html',
             link: function(scope, element, attrs) {
 
                 var height = $(window).outerHeight(),

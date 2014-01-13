@@ -1,13 +1,14 @@
-<div class="dark-text md-pad-top" data-ng-controller="SelectPreviousDSPCtrl">
+<div class="md-pad-top" data-ng-controller="SelectPreviousDSPCtrl">
+    <h4>Previous DSP's</h4>
     <form>
-        <div class="well">
+        <div class="">
             <div class="form-group">
-                <select class="form-control" data-ng-model="tempCurrentDSP" data-ng-options="d.name for d in dsps"></select>
+                <select class="form-control input-lg input-dreamfactory" data-ng-model="tempCurrentDSP" data-ng-options="d.name for d in dsps"></select>
             </div>
         </div>
 
         <div class="form-group">
-            <button type="button" data-ng-click="setPreviousDSP()" class="btn btn-default btn-success btn-lg btn-block">
+            <button type="button" data-ng-click="setPreviousDSP()" class="btn btn-default btn-dreamfactory btn-lg btn-block">
                 {{buttonsText.submit.text}}
             </button>
         </div>

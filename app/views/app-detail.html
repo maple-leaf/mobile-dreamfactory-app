@@ -6,14 +6,9 @@
                 <h4 class="pageText">Description:</h4>
                 <p class="pageText md-pad-bottom">{{pageText.info.description}}</p>
 
-                <div class="well dark">
-                    <button class="btn btn-default btn-success btn-lg btn-block" data-ng-click="launchApp()">Launch App</button>
-                </div>
-                <div class="well dark">
-                    <button class="btn btn-default btn-primary btn-lg btn-block" data-ng-click="moreDetail()">More Info</button>
-                </div>
-                <table class="table" data-ng-show="moreInfoData ? true : false">
+                <table class="table" >
                     <tbody>
+                    <!--
                     <tr>
                         <td>
                             Name
@@ -22,6 +17,7 @@
                             {{pageText.info.name}}
                         </td>
                     </tr>
+                    -->
                     <tr>
                         <td>
                             API Name
@@ -46,6 +42,7 @@
                             {{pageText.info.launch_url}}
                         </td>
                     </tr>
+                    <!--
                     <tr>
                         <td>
                             Default App
@@ -54,6 +51,7 @@
                             {{pageText.info.is_default}}
                         </td>
                     </tr>
+                    -->
                     <tr>
                         <td>
                             External URL
@@ -64,7 +62,11 @@
                     </tr>
                     </tbody>
                 </table>
+
             </div>
         </div>
+    </div>
+    <div class="row">
+        <app-detail-btns></app-detail-btns>
     </div>
 </div>
