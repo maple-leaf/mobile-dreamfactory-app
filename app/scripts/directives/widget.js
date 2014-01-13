@@ -25,12 +25,10 @@ angular.module('lpApp')
                     btnHeight = element.outerHeight();
 
                 element.css({
-                    position: 'absolute',
-                    top: height - (btnHeight + 150)
+                    position: 'relative',
+                    top: btnHeight + 220
                 })
-
             }
-
         }
     }])
     .directive('dspSettingsBtns', [function() {
@@ -45,8 +43,7 @@ angular.module('lpApp')
                     btnHeight = element.outerHeight();
 
                 element.css({
-                    position: 'absolute',
-                    top: height - (btnHeight + 150)
+                    position: 'relative'
                 })
 
             }

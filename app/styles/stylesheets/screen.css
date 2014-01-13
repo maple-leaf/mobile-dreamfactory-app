@@ -320,72 +320,120 @@ body {
   text-align: center;
   margin: auto;
 }
+/* line 202, ../sass/partials/_base.scss */
+.centered .col-xs-1 {
+  padding: 0;
+}
+/* line 202, ../sass/partials/_base.scss */
+.centered .col-xs-2 {
+  padding: 0;
+}
+/* line 202, ../sass/partials/_base.scss */
+.centered .col-xs-3 {
+  padding: 0;
+}
+/* line 202, ../sass/partials/_base.scss */
+.centered .col-xs-4 {
+  padding: 0;
+}
+/* line 202, ../sass/partials/_base.scss */
+.centered .col-xs-5 {
+  padding: 0;
+}
+/* line 202, ../sass/partials/_base.scss */
+.centered .col-xs-6 {
+  padding: 0;
+}
+/* line 202, ../sass/partials/_base.scss */
+.centered .col-xs-7 {
+  padding: 0;
+}
+/* line 202, ../sass/partials/_base.scss */
+.centered .col-xs-8 {
+  padding: 0;
+}
+/* line 202, ../sass/partials/_base.scss */
+.centered .col-xs-9 {
+  padding: 0;
+}
+/* line 202, ../sass/partials/_base.scss */
+.centered .col-xs-10 {
+  padding: 0;
+}
+/* line 202, ../sass/partials/_base.scss */
+.centered .col-xs-11 {
+  padding: 0;
+}
+/* line 202, ../sass/partials/_base.scss */
+.centered .col-xs-12 {
+  padding: 0;
+}
 
-/* line 203, ../sass/partials/_base.scss */
+/* line 209, ../sass/partials/_base.scss */
 ul.mobile-list {
   padding: 0;
   margin: 0;
 }
-/* line 208, ../sass/partials/_base.scss */
+/* line 214, ../sass/partials/_base.scss */
 ul.mobile-list li {
   list-style: none;
   border-bottom: 1px solid #4d4d4d;
 }
-/* line 213, ../sass/partials/_base.scss */
+/* line 219, ../sass/partials/_base.scss */
 ul.mobile-list li a {
   text-decoration: none;
 }
-/* line 220, ../sass/partials/_base.scss */
+/* line 226, ../sass/partials/_base.scss */
 ul.mobile-list li:first-child {
   border-top: 1px solid #4d4d4d;
 }
 
-/* line 226, ../sass/partials/_base.scss */
+/* line 232, ../sass/partials/_base.scss */
 ul.mobile-dsp-list {
   padding: 0;
   margin: 0;
 }
-/* line 231, ../sass/partials/_base.scss */
+/* line 237, ../sass/partials/_base.scss */
 ul.mobile-dsp-list li {
   list-style: none;
   border-bottom: 1px solid #4d4d4d;
 }
-/* line 236, ../sass/partials/_base.scss */
+/* line 242, ../sass/partials/_base.scss */
 ul.mobile-dsp-list li a {
   text-decoration: none;
 }
-/* line 243, ../sass/partials/_base.scss */
+/* line 249, ../sass/partials/_base.scss */
 ul.mobile-dsp-list li:first-child {
   border-top: 1px solid #4d4d4d;
 }
 
-/* line 248, ../sass/partials/_base.scss */
+/* line 254, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles {
   padding: 0;
   margin: 0 auto;
   text-align: left;
 }
-/* line 255, ../sass/partials/_base.scss */
+/* line 261, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a {
   text-decoration: none;
 }
-/* line 258, ../sass/partials/_base.scss */
+/* line 264, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li.dummyTile {
   background: rgba(0, 0, 0, 0);
 }
-/* line 263, ../sass/partials/_base.scss */
+/* line 269, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li.app {
   background-color: rgba(255, 255, 255, 0.25);
 }
-/* line 268, ../sass/partials/_base.scss */
+/* line 274, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li.group {
   background-color: rgba(255, 255, 255, 0.25);
 }
-/* line 273, ../sass/partials/_base.scss */
+/* line 279, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li.dsp {
   background-color: rgba(255, 255, 255, 0.25);
 }
-/* line 277, ../sass/partials/_base.scss */
+/* line 283, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li {
   list-style: none;
   width: 100px;
@@ -397,119 +445,125 @@ ul.mobile-dsp-list-tiles a li {
   vertical-align: top;
   background: rgba(255, 255, 255, 0.25);
 }
-/* line 293, ../sass/partials/_base.scss */
+/* line 299, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h1 {
   color: white;
   margin: 0;
   font-weight: 900;
   font-size: 22px;
 }
-/* line 293, ../sass/partials/_base.scss */
+/* line 299, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h2 {
   color: white;
   margin: 0;
   font-weight: 900;
   font-size: 19px;
 }
-/* line 293, ../sass/partials/_base.scss */
+/* line 299, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h3 {
   color: white;
   margin: 0;
   font-weight: 900;
   font-size: 16px;
 }
-/* line 293, ../sass/partials/_base.scss */
+/* line 299, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h4 {
   color: white;
   margin: 0;
   font-weight: 900;
   font-size: 13px;
 }
-/* line 293, ../sass/partials/_base.scss */
+/* line 299, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h5 {
   color: white;
   margin: 0;
   font-weight: 900;
   font-size: 10px;
 }
-/* line 293, ../sass/partials/_base.scss */
+/* line 299, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h6 {
   color: white;
   margin: 0;
   font-weight: 900;
   font-size: 7px;
 }
-/* line 302, ../sass/partials/_base.scss */
+/* line 308, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li p {
   font-weight: 200;
   font-size: 10px;
 }
-/* line 307, ../sass/partials/_base.scss */
+/* line 313, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li .skinny {
   font-weight: 300;
 }
 
+/* line 323, ../sass/partials/_base.scss */
+.tiles-container {
+  text-align: left;
+}
+
 @media screen and (max-width: 992px) {
-  /* line 320, ../sass/partials/_base.scss */
+  /* line 330, ../sass/partials/_base.scss */
   .tiles-container {
     width: 700px;
     margin: auto;
+    text-align: left;
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 331, ../sass/partials/_base.scss */
+  /* line 342, ../sass/partials/_base.scss */
   .tiles-container {
     width: 460px;
     margin: auto;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 339, ../sass/partials/_base.scss */
+  /* line 350, ../sass/partials/_base.scss */
   .tiles-container {
     width: 340px;
     margin: auto;
-    text-align: center;
+    text-align: left;
   }
 }
 @media screen and (max-width: 320px) {
-  /* line 348, ../sass/partials/_base.scss */
+  /* line 359, ../sass/partials/_base.scss */
   .tiles-container {
     width: 295px;
     margin: auto;
-    text-align: center;
+    text-align: left;
   }
 
-  /* line 358, ../sass/partials/_base.scss */
+  /* line 369, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li {
     width: 85px;
     height: 85px;
   }
 }
-/* line 367, ../sass/partials/_base.scss */
+/* line 378, ../sass/partials/_base.scss */
 .dark {
   background: #1a1a1a;
   border: 1px solid #4d4d4d;
 }
 
-/* line 376, ../sass/partials/_base.scss */
+/* line 387, ../sass/partials/_base.scss */
 .table tbody tr td {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   color: white;
 }
 
-/* line 384, ../sass/partials/_base.scss */
+/* line 395, ../sass/partials/_base.scss */
 hr {
   margin: 0;
   border-top: 1px solid #4d4d4d;
 }
 
-/* line 390, ../sass/partials/_base.scss */
+/* line 401, ../sass/partials/_base.scss */
 .navbar-dreamfactory {
   background: #1a1a1a;
   border: none;
 }
 
-/* line 396, ../sass/partials/_base.scss */
+/* line 407, ../sass/partials/_base.scss */
 .panel-swipe {
   transform: translateZ(0px);
   -moz-transform: translateZ(0);
@@ -519,24 +573,25 @@ hr {
   top: 50px;
 }
 
-/* line 407, ../sass/partials/_base.scss */
+/* line 418, ../sass/partials/_base.scss */
 .form-spacer {
   display: block;
   height: 200px;
 }
 
-/* line 413, ../sass/partials/_base.scss */
+/* line 424, ../sass/partials/_base.scss */
 .btn-default {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* line 419, ../sass/partials/_base.scss */
+/* line 430, ../sass/partials/_base.scss */
 .input-dreamfactory {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
+  box-shadow: 0 0 0;
 }
 
 /* line 3, ../sass/modules/_mixins.scss */
@@ -561,7 +616,7 @@ input:-moz-placeholder {
   color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* line 430, ../sass/partials/_base.scss */
+/* line 442, ../sass/partials/_base.scss */
 input:focus {
   border: 1px solid rgba(255, 255, 255, 0.75) !important;
   box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.75) !important;

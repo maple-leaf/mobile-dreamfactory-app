@@ -198,6 +198,12 @@ body {
   text-align: center;
   margin: auto;
 
+  @for $i from 1 through 12 {
+    .col-xs-#{$i} {
+      padding: 0;
+    }
+  }
+
 }
 
 ul.mobile-list {
@@ -314,12 +320,17 @@ ul.mobile-dsp-list-tiles {
 
 }
 
+.tiles-container {
+  text-align: left;
+}
+
 
 @media screen and (max-width: 992px) {
 
   .tiles-container {
     width: 700px;
     margin: auto;
+    text-align: left;
   }
 
 }
@@ -339,7 +350,7 @@ ul.mobile-dsp-list-tiles {
   .tiles-container {
     width: 340px;
     margin: auto;
-    text-align: center;
+    text-align: left;
   }
 }
 
@@ -348,7 +359,7 @@ ul.mobile-dsp-list-tiles {
   .tiles-container {
     width: 295px;
     margin: auto;
-    text-align: center;
+    text-align: left;
 
   }
 
@@ -420,6 +431,7 @@ hr {
   background: rgba(255,255,255, .1);
   border: 1px solid rgba(255,255,255, .3);
   color: $lightcolor;
+  box-shadow: 0 0 0;
 
 
 
