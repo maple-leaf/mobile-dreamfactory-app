@@ -41,13 +41,13 @@ body {
 
 #wrap {
   height: auto;
-  margin: 0 auto -60px;
-  padding: 0 0 60px;
+  margin: 0 auto -85px;
+  padding: 0 0 85px;
 }
 
 #footer {
   background: none;
-  height: 60px;
+  height: 85px;
   left: 0;
   position: fixed;
   right: 0;
@@ -323,6 +323,30 @@ ul.mobile-dsp-list-tiles {
 }
 
 
+ul.indicator-dots {
+  margin: 0;
+  padding: 0;
+  min-height: 25px;
+
+  li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: none;
+
+    border-radius: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid $lightopacity75
+  }
+
+  li.selected {
+    background: $lightopacity75;
+
+  }
+
+}
+
 
 
 @media screen and (max-width: 992px) {
@@ -452,6 +476,11 @@ swiper {
   right:0;
   bottom:0;
   left:0;
+}
+
+indicator {
+  text-align: center;
+  margin: auto;
 }
 
 

@@ -70,6 +70,51 @@ angular.module('lpApp')
 
         }
     }])
+    .directive('indicator', ['$rootScope', function($rootScope) {
+        return {
+            restrict: 'E',
+            scope: '@',
+            templateUrl: 'views/utility/indicators/dots.html',
+            link: function(scope, elem, attrs) {
+
+                scope.totalItems = [];
+                scope.currentPanel = 0;
+
+
+                function setNumItems(numItems) {
+                    var i = 0,
+                        out = [];
+
+                    while (i < numItems) {
+                        var indicatorObj = {
+                            id: i
+                        };
+
+                        out.push(indicatorObj);
+                        i++;
+                    }
+
+                    return out;
+                }
+
+
+                scope.$on('numPanels', function(e, numItems) {
+                    scope.totalItems = setNumItems(numItems);
+                    scope.totalItems.length <= 1 ? scope.totalItems = [] : false;
+                });
+
+                scope.$on('panel:up', function(e) {
+                    scope.currentPanel++
+                });
+
+                scope.$on('panel:down', function(e) {
+                    scope.currentPanel--
+                });
+            }
+        }
+
+
+    }])
     .directive('swiper', ['$rootScope', function($rootScope) {
         return {
             restrict: 'E',
@@ -77,16 +122,18 @@ angular.module('lpApp')
             link: function(scope, element) {
 
                 $rootScope.panelSwipe = 'left';
+                var numPanels = scope.panelsObj.panels.length;
                 scope.currentPanel = 0;
+
+                scope.$emit('numPanels', numPanels);
+
+
 
                 /*
                 $rootScope.$on('$routeChangeStart', function(scope, next, current) {
                     scope.currentPanel = 0;
                 });
                 */
-
-
-
 
                 scope.swipeLeft = function() {
 
@@ -97,6 +144,8 @@ angular.module('lpApp')
                     }
 
                     scope.currentPanel++
+
+                    scope.$emit('panel:up');
                 };
 
                 scope.swipeRight = function() {
@@ -108,14 +157,10 @@ angular.module('lpApp')
                     }
 
                     scope.currentPanel--
+                    scope.$emit('panel:down');
                 };
             }
         }
-
-
-
-
-
     }]);
 
 

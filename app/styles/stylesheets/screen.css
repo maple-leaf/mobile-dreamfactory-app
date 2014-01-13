@@ -52,14 +52,14 @@ body {
 /* line 42, ../sass/partials/_base.scss */
 #wrap {
   height: auto;
-  margin: 0 auto -60px;
-  padding: 0 0 60px;
+  margin: 0 auto -85px;
+  padding: 0 0 85px;
 }
 
 /* line 48, ../sass/partials/_base.scss */
 #footer {
   background: none;
-  height: 60px;
+  height: 85px;
   left: 0;
   position: fixed;
   right: 0;
@@ -497,8 +497,30 @@ ul.mobile-dsp-list-tiles a li .skinny {
   font-weight: 300;
 }
 
+/* line 326, ../sass/partials/_base.scss */
+ul.indicator-dots {
+  margin: 0;
+  padding: 0;
+  min-height: 25px;
+}
+/* line 331, ../sass/partials/_base.scss */
+ul.indicator-dots li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: none;
+  border-radius: 2px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+}
+/* line 343, ../sass/partials/_base.scss */
+ul.indicator-dots li.selected {
+  background: rgba(255, 255, 255, 0.75);
+}
+
 @media screen and (max-width: 992px) {
-  /* line 330, ../sass/partials/_base.scss */
+  /* line 354, ../sass/partials/_base.scss */
   .tiles-container {
     width: 700px;
     margin: auto;
@@ -506,14 +528,14 @@ ul.mobile-dsp-list-tiles a li .skinny {
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 342, ../sass/partials/_base.scss */
+  /* line 366, ../sass/partials/_base.scss */
   .tiles-container {
     width: 460px;
     margin: auto;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 350, ../sass/partials/_base.scss */
+  /* line 374, ../sass/partials/_base.scss */
   .tiles-container {
     width: 340px;
     margin: auto;
@@ -521,44 +543,44 @@ ul.mobile-dsp-list-tiles a li .skinny {
   }
 }
 @media screen and (max-width: 320px) {
-  /* line 359, ../sass/partials/_base.scss */
+  /* line 383, ../sass/partials/_base.scss */
   .tiles-container {
     width: 295px;
     margin: auto;
     text-align: left;
   }
 
-  /* line 369, ../sass/partials/_base.scss */
+  /* line 393, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li {
     width: 85px;
     height: 85px;
   }
 }
-/* line 378, ../sass/partials/_base.scss */
+/* line 402, ../sass/partials/_base.scss */
 .dark {
   background: #1a1a1a;
   border: 1px solid #4d4d4d;
 }
 
-/* line 387, ../sass/partials/_base.scss */
+/* line 411, ../sass/partials/_base.scss */
 .table tbody tr td {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   color: white;
 }
 
-/* line 395, ../sass/partials/_base.scss */
+/* line 419, ../sass/partials/_base.scss */
 hr {
   margin: 0;
   border-top: 1px solid #4d4d4d;
 }
 
-/* line 401, ../sass/partials/_base.scss */
+/* line 425, ../sass/partials/_base.scss */
 .navbar-dreamfactory {
   background: #1a1a1a;
   border: none;
 }
 
-/* line 407, ../sass/partials/_base.scss */
+/* line 431, ../sass/partials/_base.scss */
 .panel-swipe {
   transform: translateZ(0px);
   -moz-transform: translateZ(0);
@@ -568,14 +590,14 @@ hr {
   top: 100px;
 }
 
-/* line 419, ../sass/partials/_base.scss */
+/* line 443, ../sass/partials/_base.scss */
 .btn-default {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* line 425, ../sass/partials/_base.scss */
+/* line 449, ../sass/partials/_base.scss */
 .input-dreamfactory {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -585,7 +607,7 @@ hr {
   box-shadow: 0 0px 0 none, 0 0px none inset;
 }
 
-/* line 434, ../sass/partials/_base.scss */
+/* line 458, ../sass/partials/_base.scss */
 input[type="select"] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -614,19 +636,25 @@ input:-moz-placeholder {
   color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* line 444, ../sass/partials/_base.scss */
+/* line 468, ../sass/partials/_base.scss */
 input:focus {
   border: 1px solid rgba(255, 255, 255, 0.75) !important;
   box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.75) !important;
 }
 
-/* line 449, ../sass/partials/_base.scss */
+/* line 473, ../sass/partials/_base.scss */
 swiper {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+/* line 481, ../sass/partials/_base.scss */
+indicator {
+  text-align: center;
+  margin: auto;
 }
 
   /*
