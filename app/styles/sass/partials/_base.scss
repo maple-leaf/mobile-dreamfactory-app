@@ -320,9 +320,7 @@ ul.mobile-dsp-list-tiles {
 
 }
 
-.tiles-container {
-  text-align: left;
-}
+
 
 
 @media screen and (max-width: 992px) {
@@ -411,7 +409,7 @@ hr {
 
   text-align: left;
   position: absolute;
-  top: 50px;
+  top: 100px;
 
 }
 
@@ -445,7 +443,13 @@ input:focus {
   box-shadow: (0px 0px 2px $lightopacity75) !important;
 }
 
-
+swiper {
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+}
 
 
 /*
