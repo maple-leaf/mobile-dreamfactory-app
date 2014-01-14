@@ -86,7 +86,7 @@ angular.module('lpApp')
                     elem.css({
                         position: 'relative',
                         top: pHeight - 80,
-                        left: pWidth - 80,
+                        left: pWidth - 85,
                         zIndex: 5
                     });
                 }
