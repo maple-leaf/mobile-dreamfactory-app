@@ -14,12 +14,12 @@ Specific Colors
 /*
 Tile Colors
 */
-/* line 9, ../sass/partials/_base.scss */
+/* line 8, ../sass/partials/_base.scss */
 #main-app-container {
   margin: auto auto -60px;
 }
 
-/* line 13, ../sass/partials/_base.scss */
+/* line 12, ../sass/partials/_base.scss */
 html {
   height: 100%;
   -webkit-user-select: none;
@@ -29,7 +29,7 @@ html {
   user-select: none;
 }
 
-/* line 22, ../sass/partials/_base.scss */
+/* line 21, ../sass/partials/_base.scss */
 body {
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -420,20 +420,21 @@ ul.mobile-dsp-list-tiles a {
 /* line 266, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li.dummyTile {
   background: rgba(0, 0, 0, 0);
+  opacity: 0 !important;
 }
-/* line 271, ../sass/partials/_base.scss */
+/* line 272, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li.app {
   background-color: rgba(255, 255, 255, 0.25);
 }
-/* line 276, ../sass/partials/_base.scss */
+/* line 277, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li.group {
   background-color: rgba(255, 255, 255, 0.25);
 }
-/* line 281, ../sass/partials/_base.scss */
+/* line 282, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li.dsp {
   background-color: rgba(255, 255, 255, 0.25);
 }
-/* line 285, ../sass/partials/_base.scss */
+/* line 286, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li {
   list-style: none;
   width: 100px;
@@ -445,65 +446,72 @@ ul.mobile-dsp-list-tiles a li {
   vertical-align: top;
   background: rgba(255, 255, 255, 0.25);
 }
-/* line 301, ../sass/partials/_base.scss */
+/* line 302, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h1 {
   color: white;
   margin: 0;
-  font-weight: 900;
   font-size: 22px;
+  min-height: 60px;
 }
-/* line 301, ../sass/partials/_base.scss */
+/* line 302, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h2 {
   color: white;
   margin: 0;
-  font-weight: 900;
   font-size: 19px;
+  min-height: 60px;
 }
-/* line 301, ../sass/partials/_base.scss */
+/* line 302, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h3 {
   color: white;
   margin: 0;
-  font-weight: 900;
   font-size: 16px;
+  min-height: 60px;
 }
-/* line 301, ../sass/partials/_base.scss */
+/* line 302, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h4 {
   color: white;
   margin: 0;
-  font-weight: 900;
   font-size: 13px;
+  min-height: 60px;
 }
-/* line 301, ../sass/partials/_base.scss */
+/* line 302, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h5 {
   color: white;
   margin: 0;
-  font-weight: 900;
   font-size: 10px;
+  min-height: 60px;
 }
-/* line 301, ../sass/partials/_base.scss */
+/* line 302, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h6 {
   color: white;
   margin: 0;
-  font-weight: 900;
   font-size: 7px;
+  min-height: 60px;
 }
-/* line 310, ../sass/partials/_base.scss */
+/* line 311, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li p {
   font-weight: 200;
   font-size: 10px;
 }
-/* line 315, ../sass/partials/_base.scss */
+/* line 316, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li .skinny {
   font-weight: 300;
 }
+/* line 320, ../sass/partials/_base.scss */
+ul.mobile-dsp-list-tiles a li .fa {
+  color: white;
+  position: relative;
+  top: 50px;
+  z-index: 5;
+}
 
-/* line 326, ../sass/partials/_base.scss */
+/* line 334, ../sass/partials/_base.scss */
 ul.indicator-dots {
   margin: 0;
   padding: 0;
   min-height: 25px;
 }
-/* line 331, ../sass/partials/_base.scss */
+/* line 339, ../sass/partials/_base.scss */
 ul.indicator-dots li {
   display: inline-block;
   width: 10px;
@@ -514,13 +522,13 @@ ul.indicator-dots li {
   margin-right: 10px;
   border: 1px solid rgba(255, 255, 255, 0.75);
 }
-/* line 343, ../sass/partials/_base.scss */
+/* line 351, ../sass/partials/_base.scss */
 ul.indicator-dots li.selected {
   background: rgba(255, 255, 255, 0.75);
 }
 
 @media screen and (max-width: 992px) {
-  /* line 354, ../sass/partials/_base.scss */
+  /* line 362, ../sass/partials/_base.scss */
   .tiles-container {
     width: 700px;
     margin: auto;
@@ -528,14 +536,14 @@ ul.indicator-dots li.selected {
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 366, ../sass/partials/_base.scss */
+  /* line 374, ../sass/partials/_base.scss */
   .tiles-container {
     width: 460px;
     margin: auto;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 374, ../sass/partials/_base.scss */
+  /* line 382, ../sass/partials/_base.scss */
   .tiles-container {
     width: 340px;
     margin: auto;
@@ -543,44 +551,44 @@ ul.indicator-dots li.selected {
   }
 }
 @media screen and (max-width: 320px) {
-  /* line 383, ../sass/partials/_base.scss */
+  /* line 391, ../sass/partials/_base.scss */
   .tiles-container {
     width: 295px;
     margin: auto;
     text-align: left;
   }
 
-  /* line 393, ../sass/partials/_base.scss */
+  /* line 401, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li {
     width: 85px;
     height: 85px;
   }
 }
-/* line 402, ../sass/partials/_base.scss */
+/* line 410, ../sass/partials/_base.scss */
 .dark {
   background: #1a1a1a;
   border: 1px solid #4d4d4d;
 }
 
-/* line 411, ../sass/partials/_base.scss */
+/* line 419, ../sass/partials/_base.scss */
 .table tbody tr td {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   color: white;
 }
 
-/* line 419, ../sass/partials/_base.scss */
+/* line 427, ../sass/partials/_base.scss */
 hr {
   margin: 0;
   border-top: 1px solid #4d4d4d;
 }
 
-/* line 425, ../sass/partials/_base.scss */
+/* line 433, ../sass/partials/_base.scss */
 .navbar-dreamfactory {
   background: #1a1a1a;
   border: none;
 }
 
-/* line 431, ../sass/partials/_base.scss */
+/* line 439, ../sass/partials/_base.scss */
 .panel-swipe {
   transform: translateZ(0px);
   -moz-transform: translateZ(0);
@@ -590,14 +598,14 @@ hr {
   top: 100px;
 }
 
-/* line 443, ../sass/partials/_base.scss */
+/* line 451, ../sass/partials/_base.scss */
 .btn-default {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* line 449, ../sass/partials/_base.scss */
+/* line 457, ../sass/partials/_base.scss */
 .input-dreamfactory {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -607,7 +615,7 @@ hr {
   box-shadow: 0 0px 0 none, 0 0px none inset;
 }
 
-/* line 458, ../sass/partials/_base.scss */
+/* line 466, ../sass/partials/_base.scss */
 input[type="select"] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -636,13 +644,13 @@ input:-moz-placeholder {
   color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* line 468, ../sass/partials/_base.scss */
+/* line 476, ../sass/partials/_base.scss */
 input:focus {
   border: 1px solid rgba(255, 255, 255, 0.75) !important;
   box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.75) !important;
 }
 
-/* line 473, ../sass/partials/_base.scss */
+/* line 481, ../sass/partials/_base.scss */
 swiper {
   position: fixed;
   top: 0;
@@ -651,7 +659,7 @@ swiper {
   left: 0;
 }
 
-/* line 481, ../sass/partials/_base.scss */
+/* line 489, ../sass/partials/_base.scss */
 indicator {
   text-align: center;
   margin: auto;
@@ -709,124 +717,95 @@ h6 {
   margin-top: 10px;
 }
 
-/* line 13, ../sass/partials/_typography.scss */
+/* line 16, ../sass/partials/_typography.scss */
+h1 small {
+  font-weight: 300 !important;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* line 16, ../sass/partials/_typography.scss */
+h2 small {
+  font-weight: 300 !important;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* line 16, ../sass/partials/_typography.scss */
+h3 small {
+  font-weight: 300 !important;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* line 16, ../sass/partials/_typography.scss */
+h4 small {
+  font-weight: 300 !important;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* line 16, ../sass/partials/_typography.scss */
+h5 small {
+  font-weight: 300 !important;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* line 16, ../sass/partials/_typography.scss */
+h6 small {
+  font-weight: 300 !important;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* line 22, ../sass/partials/_typography.scss */
 p {
   color: white;
 }
 
-/* line 18, ../sass/partials/_typography.scss */
+/* line 27, ../sass/partials/_typography.scss */
 label {
   display: block;
   color: white;
 }
 
-/* line 29, ../sass/partials/_typography.scss */
+/* line 38, ../sass/partials/_typography.scss */
 .dark-text h1 {
   color: #1a1a1a;
 }
-/* line 29, ../sass/partials/_typography.scss */
+/* line 38, ../sass/partials/_typography.scss */
 .dark-text h2 {
   color: #1a1a1a;
 }
-/* line 29, ../sass/partials/_typography.scss */
+/* line 38, ../sass/partials/_typography.scss */
 .dark-text h3 {
   color: #1a1a1a;
 }
-/* line 29, ../sass/partials/_typography.scss */
+/* line 38, ../sass/partials/_typography.scss */
 .dark-text h4 {
   color: #1a1a1a;
 }
-/* line 29, ../sass/partials/_typography.scss */
+/* line 38, ../sass/partials/_typography.scss */
 .dark-text h5 {
   color: #1a1a1a;
 }
-/* line 29, ../sass/partials/_typography.scss */
+/* line 38, ../sass/partials/_typography.scss */
 .dark-text h6 {
   color: #1a1a1a;
 }
-/* line 34, ../sass/partials/_typography.scss */
+/* line 43, ../sass/partials/_typography.scss */
 .dark-text p {
   color: #1a1a1a;
 }
-/* line 39, ../sass/partials/_typography.scss */
+/* line 48, ../sass/partials/_typography.scss */
 .dark-text label {
   color: #1a1a1a;
   font-weight: 300;
 }
 
-/* line 45, ../sass/partials/_typography.scss */
+/* line 54, ../sass/partials/_typography.scss */
 .pageText {
   color: white;
   text-align: left;
 }
-/* line 49, ../sass/partials/_typography.scss */
+/* line 58, ../sass/partials/_typography.scss */
 .pageText h2 {
   color: white;
-}
-
-/*
-  Custom Panel Styling
-*/
-/* line 5, ../sass/partials/_panel.scss */
-.panel {
-  margin-bottom: auto;
-  border-radius: 0px !important;
-}
-/* line 8, ../sass/partials/_panel.scss */
-.panel h1 {
-  color: #1a1a1a;
-}
-/* line 8, ../sass/partials/_panel.scss */
-.panel h2 {
-  color: #1a1a1a;
-}
-/* line 8, ../sass/partials/_panel.scss */
-.panel h3 {
-  color: #1a1a1a;
-}
-/* line 8, ../sass/partials/_panel.scss */
-.panel h4 {
-  color: #1a1a1a;
-}
-/* line 8, ../sass/partials/_panel.scss */
-.panel h5 {
-  color: #1a1a1a;
-}
-/* line 8, ../sass/partials/_panel.scss */
-.panel h6 {
-  color: #1a1a1a;
-}
-/* line 14, ../sass/partials/_panel.scss */
-.panel p {
-  color: #1a1a1a;
-}
-
-/* line 23, ../sass/partials/_panel.scss */
-.panel-default {
-  border: none !important;
-}
-
-/* line 27, ../sass/partials/_panel.scss */
-.panel-group {
-  border-radius: 0px !important;
-}
-
-/* line 33, ../sass/partials/_panel.scss */
-.panel-heading {
-  border: none !important;
-  border-radius: 0px !important;
-  font-size: 2em;
-}
-
-/* line 44, ../sass/partials/_panel.scss */
-.panel-title a {
-  text-decoration: none;
-}
-
-/* line 52, ../sass/partials/_panel.scss */
-.panel-collapse {
-  border: none !important;
-  background: #1a1a1a;
 }
 
 /*

@@ -10,6 +10,15 @@ $headingMarginTop: 10px;
   }
 }
 
+
+@for $i from 1 through 6 {
+
+  h#{$i} small {
+    font-weight: 300 !important;
+    color: $lightopacity75;
+  }
+}
+
 p {
   color: $lightcolor;
 }

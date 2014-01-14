@@ -3,8 +3,7 @@
 @import "compass";
 
 $tilesize: 100px;
-$topcolor: #8b348e;
-$bottomcolor:#ef017c;
+
 
 #main-app-container {
   margin: auto auto -60px;
@@ -38,6 +37,7 @@ body {
   margin: 0;
   overflow: hidden;
 }
+
 
 #wrap {
   height: auto;
@@ -266,6 +266,7 @@ ul.mobile-dsp-list-tiles {
     li.dummyTile {
 
       background: rgba(0,0,0,0);
+      opacity: 0 !important;
     }
 
     li.app{
@@ -301,9 +302,9 @@ ul.mobile-dsp-list-tiles {
         h#{$i} {
           color: $tiletitlecolor;
           margin: $tiletitlemargin;
-          font-weight: 900;
           font-size: $headingOneSize - $sizer;
           $sizer: $sizer + 3;
+          min-height: 60px;
         }
       }
 
@@ -314,6 +315,13 @@ ul.mobile-dsp-list-tiles {
 
       .skinny {
         font-weight: 300;
+      }
+
+      .fa {
+        color: $lightcolor;
+        position: relative;
+        top: 50px;
+        z-index: 5;
       }
 
     }

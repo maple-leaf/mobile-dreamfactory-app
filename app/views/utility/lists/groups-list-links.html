@@ -59,16 +59,16 @@
                 <li data-ng-repeat="group in panel.groups" data-ng-class="group.id ? 'group' : 'dummyTile'" hm-tap="singleTapGroup(group)">
                     <div>
                         <h3 class="skinny">{{group.name}}</h3>
-
                     </div>
+                    <tile-icon icon="fa-folder"></tile-icon>
                 </li>
             </a>
             <a>
                 <li data-ng-repeat="app in panel.apps" data-ng-class="app.id ? 'app' : 'dummyTile'"  hm-tap="singleTapApp(app)" hm-hold="holdApp(app)" >
                     <div>
                         <h3 class="skinny">{{app.name}}</h3>
-
                     </div>
+                    <tile-icon icon="fa-html5"></tile-icon>
                 </li>
             </a>
         </ul>

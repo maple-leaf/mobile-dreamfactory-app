@@ -904,11 +904,49 @@ angular.module('lpApp')
                     currentPanel: 0,
                     panels: out
                 };
-
-                console.log(panelsObj);
-
                 return panelsObj;
 
             }
+        }
+    }])
+    .factory('ExitService', ['NotificationService', function(NotificationService) {
+
+        return function(bool) {
+
+            var confirmFunc = function() {
+
+                navigator.app.exitApp();
+            };
+
+
+            // Here we build the object that we will pass to the NotificationService
+            var confirm = {
+
+                // We add a custom message to display to the user
+                message: 'Quit DreamFactory?',
+
+                // The call back we wish to be executed if the user confirms.
+                // We built this previously
+                confirmCallback: confirmFunc,
+
+                // and we add a custom Title for the confirm box
+                title: 'Confirm'
+            };
+
+
+            var listener = function(e) {
+
+                NotificationService.confirmDialog(confirm);
+            };
+
+            if (bool) {
+
+                document.addEventListener('backbutton', listener, false);
+            }
+            else {
+
+                document.removeEventListener('backbutton', listener);
+            }
+
         }
     }]);

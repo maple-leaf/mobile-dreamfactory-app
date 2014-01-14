@@ -285,11 +285,7 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                 resolve: {
                     getGroups: ['AppStorageService', function(AppStorageService) {
 
-                        var apps = AppStorageService.Apps.get();
-
-                        console.log(apps);
-
-                        return apps;
+                        return AppStorageService.Apps.get();
 
                     }],
 
@@ -300,7 +296,7 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                 }
             })
             .when('/launchpad/:groupId',{
-                templateUrl: 'views/launchpad-group.html',
+                templateUrl: 'views/launchpad.html',
                 controller: 'LaunchPadGroupCtrl',
                 resolve: {
                     getApps: ['$route', 'AppStorageService', function($route, AppStorageService) {
@@ -431,10 +427,11 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
         }]);
     }])
 
-    .run(['$route', '$rootScope', '$location', '$http', 'UserService', 'AppStorageService',
-        function ($route, $rootScope, $location, $http, UserService, AppStorageService) {
+    .run(['$route', '$rootScope', '$location', '$http', 'UserService', 'AppStorageService', 'ExitService',
+        function ($route, $rootScope, $location, $http, UserService, AppStorageService, ExitService) {
 
         $rootScope.$on('$routeChangeStart', function(scope, next, current) {
+
 
             var protectedRoutes = [
                 '/launchpad/:groupId',
@@ -443,6 +440,15 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
             ];
 
             var path = next.$$route.originalPath;
+
+
+            if (path !== '/launchpad') {
+                ExitService(false);
+
+            }
+            else {
+                ExitService(true);
+            }
 
             angular.forEach(protectedRoutes, function(v, i) {
                 if (path === v) {

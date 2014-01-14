@@ -65,9 +65,30 @@ angular.module('lpApp')
                     position: 'absolute',
                     top: height - (btnHeight + 150)
                 })
-
             }
+        }
+    }])
+    .directive('tileIcon', [function() {
+        return {
+            restrict: 'E',
+            replace: true,
+            scope: {
+                icon: '@icon'
+            },
+            template: '<i class="fa {{icon}}"></i>',
+            link: function(scope, elem, attrs) {
 
+                var pHeight = $(elem).parent().height(),
+                    pWidth = $(elem).parent().width();
+
+
+                elem.css({
+                    position: 'relative',
+                    top: pHeight - 80,
+                    left: pWidth - 90,
+                    zIndex: 5
+                });
+            }
         }
     }])
     .directive('indicator', ['$rootScope', function($rootScope) {
@@ -79,7 +100,6 @@ angular.module('lpApp')
 
                 scope.totalItems = [];
                 scope.currentPanel = 0;
-
 
                 function setNumItems(numItems) {
                     var i = 0,
@@ -97,7 +117,6 @@ angular.module('lpApp')
                     return out;
                 }
 
-
                 scope.$on('numPanels', function(e, numItems) {
                     scope.totalItems = setNumItems(numItems);
                     scope.totalItems.length <= 1 ? scope.totalItems = [] : false;
@@ -112,8 +131,6 @@ angular.module('lpApp')
                 });
             }
         }
-
-
     }])
     .directive('swiper', ['$rootScope', function($rootScope) {
         return {
