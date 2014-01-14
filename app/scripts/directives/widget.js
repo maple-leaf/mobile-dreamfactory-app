@@ -131,6 +131,7 @@ angular.module('lpApp')
                 scope.$on('numPanels', function(e, numItems) {
 
                     numItems = numItems || 0;
+                    scope.currentPanel = 0;
                     scope.totalItems = setNumItems(numItems);
                     scope.totalItems.length <= 1 ? scope.totalItems = [] : false;
                 });
