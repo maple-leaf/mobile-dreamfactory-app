@@ -450,6 +450,8 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                 ExitService(true);
             }
 
+            $rootScope.$broadcast('numPanels', 0);
+
             angular.forEach(protectedRoutes, function(v, i) {
                 if (path === v) {
 

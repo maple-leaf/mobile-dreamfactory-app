@@ -82,12 +82,23 @@ angular.module('lpApp')
                     pWidth = $(elem).parent().width();
 
 
-                elem.css({
-                    position: 'relative',
-                    top: pHeight - 80,
-                    left: pWidth - 90,
-                    zIndex: 5
-                });
+                if (pHeight == 90) {
+                    elem.css({
+                        position: 'relative',
+                        top: pHeight - 80,
+                        left: pWidth - 80,
+                        zIndex: 5
+                    });
+                }
+                else {
+                    elem.css({
+                        position: 'relative',
+                        top: pHeight - 80,
+                        left: pWidth - 60,
+                        zIndex: 5
+                    });
+                }
+
             }
         }
     }])
@@ -118,6 +129,8 @@ angular.module('lpApp')
                 }
 
                 scope.$on('numPanels', function(e, numItems) {
+
+                    numItems = numItems || 0;
                     scope.totalItems = setNumItems(numItems);
                     scope.totalItems.length <= 1 ? scope.totalItems = [] : false;
                 });
