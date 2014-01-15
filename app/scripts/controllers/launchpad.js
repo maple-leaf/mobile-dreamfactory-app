@@ -6,6 +6,9 @@ angular.module('lpApp')
         function ($scope, $rootScope, $location, $timeout, getGroups, getDSPInfo, AppLaunchService, AppStrings, ObjectService, UIScrollService) {
 
 
+
+
+
             // Set App Location
             $rootScope.appLocation = 'Launchpad';
 

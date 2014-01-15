@@ -909,44 +909,154 @@ angular.module('lpApp')
             }
         }
     }])
-    .factory('ExitService', ['NotificationService', function(NotificationService) {
+    .factory('EventHandler', [function() {
 
-        return function(bool) {
+        var cache = {},
+            guidCounter = 1,
+            expando = "data" + (new Date).getTime(),
+            nextGuid = 1;
 
-            var confirmFunc = function() {
-
-                navigator.app.exitApp();
-            };
-
-
-            // Here we build the object that we will pass to the NotificationService
-            var confirm = {
-
-                // We add a custom message to display to the user
-                message: 'Quit DreamFactory?',
-
-                // The call back we wish to be executed if the user confirms.
-                // We built this previously
-                confirmCallback: confirmFunc,
-
-                // and we add a custom Title for the confirm box
-                title: 'Confirm'
-            };
+        function _fixEvent(event) {
+            return event;
+        }
 
 
-            var listener = function(e) {
+        function _getData(elem) {
+            var guid = elem[expando];
 
-                NotificationService.confirmDialog(confirm);
-            };
-
-            if (bool) {
-
-                document.addEventListener('backbutton', listener, false);
+            if (!guid) {
+                guid = elem[expando] = guidCounter++;
+                cache[guid] = {};
             }
-            else {
 
-                document.removeEventListener('backbutton', listener);
+            return cache[guid];
+        }
+
+        function _removeData(elem) {
+            var guid = elem[expando];
+            if (!guid) return;
+
+            delete cache[guid];
+            try {
+                delete elem[expando];
+            }catch (e){
+                if (elem.removeAttribute) {
+                    elem.removeAttribute(expando);
+                }
+            }
+        }
+
+        function _addEvent(elem, type, fn) {
+
+            var data = _getData(elem);
+
+            if (!data.handlers) data.handlers = {};
+
+            if (!data.handlers[type]) data.handlers[type] = [];
+
+            if (!fn.guid) fn.guid = nextGuid++;
+
+            data.handlers[type].push(fn);
+
+            if (!data.dispatcher) {
+                data.disabled = false;
+                data.dispatcher = function(e) {
+
+                    if (data.disabled) return;
+                    e = _fixEvent(e);
+
+                    var handlers = data.handlers[e.type];
+                    if (handlers) {
+                        for (var n = 0; n < handlers.length; n++) {
+                            handlers[n].call(elem, e);
+                        }
+                    }
+                }
+            }
+
+            if (data.handlers[type].length == 1) {
+                elem.addEventListener(type, data.dispatcher, false);
             }
 
         }
-    }]);
+
+        function _removeEvent(elem, type, fn) {
+
+            var data = _getData(elem);
+
+            if (!data.handlers) return;
+
+            var removeType = function(t) {
+                data.handlers[t] = [];
+                tidyUp(elem, t);
+            }
+
+            if (!type) {
+                for (var t in data.handlers) removeType(t);
+                return;
+            }
+
+            var handlers = data.handlers[type];
+
+            if (!handlers) return;
+
+            if (!fn) {
+                removeType(type);
+                return;
+            }
+        }
+
+        function tidyUp(elem, type) {
+
+            function isEmpty(object) {
+                for (var prop in object) {
+                    return false;
+                }
+
+                return true;
+            }
+
+            var data = _getData(elem);
+
+            if (data.handlers[type].length === 0) {
+
+                delete data.handlers[type];
+
+                elem.removeEventListener(type, data.dispatcher, false);
+            }
+
+            if (isEmpty(data.handlers)) {
+                delete data.handlers;
+                delete data.dispatcher;
+            }
+
+            if (isEmpty(data)) {
+                _removeData(elem);
+            }
+        }
+
+
+        return {
+
+            getData: function(elem) {
+               return _getData(elem);
+            },
+
+            removeData: function(elem) {
+                _removeData(elem);
+            },
+
+            addEvent: function(elem, type, fn) {
+                _addEvent(elem, type, fn);
+
+            },
+
+            removeEvent: function(elem, type, fn) {
+                _removeEvent(elem)
+            }
+
+
+
+        }
+    }])
+

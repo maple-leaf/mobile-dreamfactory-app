@@ -427,8 +427,8 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
         }]);
     }])
 
-    .run(['$route', '$rootScope', '$location', '$http', 'UserService', 'AppStorageService', 'ExitService',
-        function ($route, $rootScope, $location, $http, UserService, AppStorageService, ExitService) {
+    .run(['$route', '$rootScope', '$location', '$http', 'UserService', 'AppStorageService', 'EventHandler',
+        function ($route, $rootScope, $location, $http, UserService, AppStorageService, EventHandler) {
 
         $rootScope.$on('$routeChangeStart', function(scope, next, current) {
 
@@ -439,15 +439,17 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                 '/profile'
             ];
 
+            var alertMe = function() {
+                alert('Yeah');
+            }
+
             var path = next.$$route.originalPath;
 
-
-            if (path !== '/launchpad') {
-                ExitService(false);
-
+            if (path === '/launchpad') {
+                EventHandler.addEvent(document, 'backbutton', alertMe);
             }
             else {
-                ExitService(true);
+                EventHandler.removeEvent(document, 'backbutton', alertMe);
             }
 
             $rootScope.$broadcast('numPanels', 0);
