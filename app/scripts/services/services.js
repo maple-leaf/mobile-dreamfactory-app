@@ -117,7 +117,18 @@ angular.module('lpApp')
             getProfileStrings: {
                 title: 'Profile',
                 description: 'Edit user profile'
+            },
+
+            getAboutAppStrings: {
+                title: 'About',
+                description: 'This app displays and launches applications using the DreamFactory Services Platform.',
+            },
+
+            getCopyrightStrings: {
+                title: 'Copyright',
+                description: "Copyright Strings"
             }
+
         }
     }])
     .factory('StringService', [function() {

@@ -2,6 +2,7 @@
 
 
 var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTouchEvents'])
+    .constant('APP_VERSION', '0.8.5')
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/', {
@@ -378,6 +379,10 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                         return defer.promise;
                     }]
                 }
+            })
+            .when('/about-app', {
+                templateUrl: 'views/public/about-app.html',
+                controller: 'AboutAppCtrl'
             })
             .otherwise({
                 redirectTo: '/'

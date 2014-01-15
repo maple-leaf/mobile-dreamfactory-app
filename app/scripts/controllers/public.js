@@ -215,6 +215,12 @@ angular.module('lpApp')
                         button: {
                             text: 'Reset App'
                         }
+                    },
+                    aboutApp: {
+                        title: 'About DreamFactory',
+                        button: {
+                            text: 'About DreamFactory App'
+                        }
                     }
                 }
             };
@@ -232,10 +238,15 @@ angular.module('lpApp')
                 $scope.$broadcast('dsp:change');
             };
 
-            $scope.resetApp = function() {
+            $scope.resetApp = function () {
 
                 $scope.$broadcast('app:reset');
             };
+
+            $scope.aboutApp = function() {
+
+                $scope.$broadcast('app:about');
+            }
 
 
             // PRIVATE API
@@ -262,15 +273,15 @@ angular.module('lpApp')
                 $scope._currentDSPSettings();
             });
 
-            $scope.$on('dsp:change', function(e) {
+            $scope.$on('dsp:change', function (e) {
 
                 $scope._changeDSP();
             });
 
-            $scope.$on('app:reset', function(e) {
+            $scope.$on('app:reset', function (e) {
 
 
-                var confirmFunc = function() {
+                var confirmFunc = function () {
 
                     StorageService.sessionStorage.clear();
                     StorageService.localStorage.clear();
@@ -298,6 +309,11 @@ angular.module('lpApp')
                 NotificationService.confirmDialog(confirm);
 
             });
+
+            $scope.$on('app:about', function(e) {
+
+                $location.url('/about-app');
+            })
 
         }])
     .controller('ConnectDSPCtrl', ['$scope', '$rootScope', 'ObjectService', 'AppStrings', 'getAllDSPs',
@@ -344,8 +360,6 @@ angular.module('lpApp')
 
                 $scope.$broadcast('settings:removeDSP');
             };
-
-
 
 
             // PRIVATE API
@@ -439,7 +453,7 @@ angular.module('lpApp')
                     }
                 };
 
-                var cancelFunc = function() {
+                var cancelFunc = function () {
 
                     LoadingScreenService.stop();
                 }
@@ -557,7 +571,7 @@ angular.module('lpApp')
             })
         }])
     .controller('SelectPreviousDSPCtrl', ['$scope', '$location', '$rootScope', '$q', 'SystemService', 'AppStrings', 'StorageService', 'AppStorageService', 'LoadingScreenService',
-        function($scope, $location, $rootScope,  $q,  SystemService, AppStrings, StorageService, AppStorageService, LoadingScreenService) {
+        function ($scope, $location, $rootScope, $q, SystemService, AppStrings, StorageService, AppStorageService, LoadingScreenService) {
 
             $scope.pageText = AppStrings.getPreviousSelectedDSPStrings;
             $scope.buttonsText = AppStrings.getButtonStrings;
@@ -565,19 +579,18 @@ angular.module('lpApp')
 
             // PUBLIC API
 
-            $scope.setPreviousDSP = function() {
+            $scope.setPreviousDSP = function () {
 
                 $scope.$broadcast('dsp:setPrevious', $scope.tempCurrentDSP);
             };
 
 
-
             // PRIVATE API
-            $scope._createDSPList = function() {
+            $scope._createDSPList = function () {
 
                 var DSPList = [];
 
-                angular.forEach(AppStorageService.DSP.getAll(), function(obj) {
+                angular.forEach(AppStorageService.DSP.getAll(), function (obj) {
 
                     DSPList.push({
                         name: obj.name,
@@ -589,10 +602,10 @@ angular.module('lpApp')
                 return DSPList;
             };
 
-            $scope._currentDSP = function() {
+            $scope._currentDSP = function () {
                 var currentDSPIndex = null;
 
-                angular.forEach($scope.dsps, function(v, i) {
+                angular.forEach($scope.dsps, function (v, i) {
                     if (v.id == AppStorageService.DSP.CurrentDSP.getCurrentDSPId()) {
                         currentDSPIndex = i;
                     }
@@ -623,7 +636,7 @@ angular.module('lpApp')
 
 
             // MESSAGES
-            $scope.$on('dsp:setPrevious', function(e, dsp) {
+            $scope.$on('dsp:setPrevious', function (e, dsp) {
 
                 var dsp = AppStorageService.DSP.get(dsp.id);
 
@@ -667,18 +680,16 @@ angular.module('lpApp')
                     });
             });
 
-
-
-
             // Initialization
 
             $scope.dsps = $scope._createDSPList();
             $scope.tempCurrentDSP = $scope.dsps[$scope._currentDSP()];
+        }])
+    .controller('AboutAppCtrl', ['$scope', 'AppStrings', 'APP_VERSION',
+        function ($scope, AppStrings, APP_VERSION) {
+            $scope.pageText = AppStrings.getAboutAppStrings;
 
-
-
-
-
+            $scope.appVersion = APP_VERSION;
         }]);
 
 
