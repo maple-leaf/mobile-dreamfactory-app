@@ -830,16 +830,12 @@ angular.module('lpApp')
 
             getWindowHeight: function() {
 
-                var height = $(window).outerHeight() - 150;
-                alert(height);
-                return height;
+                return $(window).outerHeight() - 150;
             },
 
             getWindowWidth: function() {
 
-                var width = $('.tiles-container').outerWidth();
-                alert(width);
-                return width;
+                return $('.tiles-container').outerWidth();
             },
 
             getGCD: function(x, y) {
