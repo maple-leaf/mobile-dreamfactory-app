@@ -427,8 +427,8 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
         }]);
     }])
 
-    .run(['$route', '$rootScope', '$location', '$http', 'UserService', 'AppStorageService', 'EventHandler',
-        function ($route, $rootScope, $location, $http, UserService, AppStorageService, EventHandler) {
+    .run(['$route', '$rootScope', '$location', '$http', 'UserService', 'AppStorageService', 'EventHandler', 'NotificationService',
+        function ($route, $rootScope, $location, $http, UserService, AppStorageService, EventHandler, NotificationService) {
 
         $rootScope.$on('$routeChangeStart', function(scope, next, current) {
 
@@ -439,17 +439,35 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                 '/profile'
             ];
 
-            var alertMe = function() {
-                alert('Yeah');
+            var confirmFunc = function() {
+                navigator.app.exitApp();
             }
+
+            // Here we build the object that we will pass to the NotificationService
+            var confirm = {
+
+                // We add a custom message to display to the user
+                message: 'Quit DreamFactory?',
+
+                // The call back we wish to be executed if the user confirms.
+                // We built this previously
+                confirmCallback: confirmFunc,
+
+                // and we add a custom Title for the confirm box
+                title: 'Confirm'
+            };
+
+            var exitApp = function() {
+                NotificationService.confirmDialog(confirm)
+            };
 
             var path = next.$$route.originalPath;
 
             if (path === '/launchpad') {
-                EventHandler.addEvent(document, 'backbutton', alertMe);
+                EventHandler.addEvent(document, 'backbutton', exitApp);
             }
             else {
-                EventHandler.removeEvent(document, 'backbutton', alertMe);
+                EventHandler.removeEvent(document, 'backbutton', exitApp);
             }
 
             $rootScope.$broadcast('numPanels', 0);
