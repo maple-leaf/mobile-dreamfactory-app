@@ -196,8 +196,13 @@ angular.module('lpApp')
 
             getFirstMessage: function(response) {
 
+                if (response.data) {
+                    return response.data.error[0].message;
 
-                return response.data.error[0].message;
+                }
+                else {
+                    return 'There was an Error.  Please contact your system administrator'
+                }
             },
 
             getAllMessages: function(data) {
@@ -827,11 +832,21 @@ angular.module('lpApp')
             tileHeight: 110,
             numTilesAcross: 3,
 
+            setTileSize: function() {
+
+                if (this.getWindowWidth() <= 320) {
+                    this.tileWidth = 85;
+                    this.tileWidth = 85;
+                }
+            },
 
             getWindowHeight: function() {
 
-                return $(window).outerHeight() - 150;
+                 var height = $(window).outerHeight() - 150;
+                // alert(height);
+                return height;
             },
+
 
             getWindowWidth: function() {
 
@@ -848,18 +863,18 @@ angular.module('lpApp')
             },
 
             getNumTilesHorizontal: function() {
-
                 return Math.floor(this.getWindowWidth() / this.tileWidth);
             },
 
             getNumTilesVertical: function() {
 
-                return Math.floor(this.getWindowHeight() / this.tileWidth);
+                return Math.floor(this.getWindowHeight() / this.tileHeight);
             },
 
 
             determineSquares: function() {
 
+                this.setTileSize();
                 return (this.getNumTilesHorizontal() * this.getNumTilesVertical());
             },
 
