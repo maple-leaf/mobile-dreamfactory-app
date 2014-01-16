@@ -455,59 +455,60 @@ ul.mobile-dsp-list-tiles a li {
   padding: 5px;
   vertical-align: top;
   background: rgba(255, 255, 255, 0.25);
+  border-radius: 3px 3px;
 }
-/* line 310, ../sass/partials/_base.scss */
+/* line 312, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h1 {
   color: white;
   margin: 0;
   font-size: 22px;
   min-height: 60px;
 }
-/* line 310, ../sass/partials/_base.scss */
+/* line 312, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h2 {
   color: white;
   margin: 0;
   font-size: 19px;
   min-height: 60px;
 }
-/* line 310, ../sass/partials/_base.scss */
+/* line 312, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h3 {
   color: white;
   margin: 0;
   font-size: 16px;
   min-height: 60px;
 }
-/* line 310, ../sass/partials/_base.scss */
+/* line 312, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h4 {
   color: white;
   margin: 0;
   font-size: 13px;
   min-height: 60px;
 }
-/* line 310, ../sass/partials/_base.scss */
+/* line 312, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h5 {
   color: white;
   margin: 0;
   font-size: 10px;
   min-height: 60px;
 }
-/* line 310, ../sass/partials/_base.scss */
+/* line 312, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li h6 {
   color: white;
   margin: 0;
   font-size: 7px;
   min-height: 60px;
 }
-/* line 319, ../sass/partials/_base.scss */
+/* line 321, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li p {
   font-weight: 200;
   font-size: 10px;
 }
-/* line 324, ../sass/partials/_base.scss */
+/* line 326, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li .skinny {
   font-weight: 300;
 }
-/* line 328, ../sass/partials/_base.scss */
+/* line 330, ../sass/partials/_base.scss */
 ul.mobile-dsp-list-tiles a li .fa {
   color: white;
   position: relative;
@@ -515,13 +516,13 @@ ul.mobile-dsp-list-tiles a li .fa {
   z-index: 5;
 }
 
-/* line 342, ../sass/partials/_base.scss */
+/* line 344, ../sass/partials/_base.scss */
 ul.indicator-dots {
   margin: 0;
   padding: 0;
   min-height: 25px;
 }
-/* line 347, ../sass/partials/_base.scss */
+/* line 349, ../sass/partials/_base.scss */
 ul.indicator-dots li {
   display: inline-block;
   width: 10px;
@@ -532,36 +533,36 @@ ul.indicator-dots li {
   margin-right: 10px;
   border: 1px solid rgba(255, 255, 255, 0.75);
 }
-/* line 359, ../sass/partials/_base.scss */
+/* line 361, ../sass/partials/_base.scss */
 ul.indicator-dots li.selected {
   background: rgba(255, 255, 255, 0.75);
 }
 
-/* line 367, ../sass/partials/_base.scss */
+/* line 369, ../sass/partials/_base.scss */
 .dark {
   background: #1a1a1a;
   border: 1px solid #4d4d4d;
 }
 
-/* line 376, ../sass/partials/_base.scss */
+/* line 378, ../sass/partials/_base.scss */
 .table tbody tr td {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   color: white;
 }
 
-/* line 384, ../sass/partials/_base.scss */
+/* line 386, ../sass/partials/_base.scss */
 hr {
   margin: 0;
   border-top: 1px solid #4d4d4d;
 }
 
-/* line 390, ../sass/partials/_base.scss */
+/* line 392, ../sass/partials/_base.scss */
 .navbar-dreamfactory {
   background: #1a1a1a;
   border: none;
 }
 
-/* line 396, ../sass/partials/_base.scss */
+/* line 398, ../sass/partials/_base.scss */
 .panel-swipe {
   transform: translateZ(0px);
   -moz-transform: translateZ(0);
@@ -571,14 +572,14 @@ hr {
   top: 100px;
 }
 
-/* line 408, ../sass/partials/_base.scss */
+/* line 410, ../sass/partials/_base.scss */
 .btn-default {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* line 414, ../sass/partials/_base.scss */
+/* line 416, ../sass/partials/_base.scss */
 .input-dreamfactory {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -588,7 +589,7 @@ hr {
   box-shadow: 0 0px 0 none, 0 0px none inset;
 }
 
-/* line 423, ../sass/partials/_base.scss */
+/* line 425, ../sass/partials/_base.scss */
 input[type="select"] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -617,13 +618,13 @@ input:-moz-placeholder {
   color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* line 433, ../sass/partials/_base.scss */
+/* line 435, ../sass/partials/_base.scss */
 input:focus {
   border: 1px solid rgba(255, 255, 255, 0.75) !important;
   box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.75) !important;
 }
 
-/* line 438, ../sass/partials/_base.scss */
+/* line 440, ../sass/partials/_base.scss */
 swiper {
   position: fixed;
   top: 0;
@@ -632,14 +633,14 @@ swiper {
   left: 0;
 }
 
-/* line 446, ../sass/partials/_base.scss */
+/* line 448, ../sass/partials/_base.scss */
 indicator {
   text-align: center;
   margin: auto;
 }
 
 @media screen and (max-width: 992px) {
-  /* line 457, ../sass/partials/_base.scss */
+  /* line 459, ../sass/partials/_base.scss */
   .tiles-container {
     width: 700px;
     margin: auto;
@@ -647,14 +648,14 @@ indicator {
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 469, ../sass/partials/_base.scss */
+  /* line 471, ../sass/partials/_base.scss */
   .tiles-container {
     width: 460px;
     margin: auto;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 477, ../sass/partials/_base.scss */
+  /* line 479, ../sass/partials/_base.scss */
   .tiles-container {
     width: 340px;
     margin: auto;
@@ -662,19 +663,19 @@ indicator {
   }
 }
 @media screen and (max-width: 320px) {
-  /* line 487, ../sass/partials/_base.scss */
+  /* line 489, ../sass/partials/_base.scss */
   .tiles-container {
     width: 295px;
     margin: auto;
     text-align: left;
   }
 
-  /* line 494, ../sass/partials/_base.scss */
+  /* line 496, ../sass/partials/_base.scss */
   body {
     font-size: 10px;
   }
 
-  /* line 498, ../sass/partials/_base.scss */
+  /* line 500, ../sass/partials/_base.scss */
   .btn-lg {
     padding: 5px 10px;
     font-size: 12px;
@@ -682,7 +683,7 @@ indicator {
     border-radius: 3px;
   }
 
-  /* line 505, ../sass/partials/_base.scss */
+  /* line 507, ../sass/partials/_base.scss */
   .input-lg {
     height: 30px;
     padding: 5px 10px;
@@ -691,7 +692,7 @@ indicator {
     border-radius: 3px;
   }
 
-  /* line 516, ../sass/partials/_base.scss */
+  /* line 518, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li {
     width: 85px;
     height: 85px;

@@ -303,6 +303,8 @@ ul.mobile-dsp-list-tiles {
       vertical-align: top;
       background: $tiledspbackgroundcolor;
 
+      border-radius: 3px 3px;
+
       $sizer: 0;
       $headingOneSize: 22px;
       @for $i from 1 through 6 {
