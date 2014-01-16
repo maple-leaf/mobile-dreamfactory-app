@@ -38,6 +38,14 @@ body {
   overflow: hidden;
 }
 
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
 
 #wrap {
   height: auto;

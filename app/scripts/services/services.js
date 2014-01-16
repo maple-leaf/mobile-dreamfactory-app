@@ -121,7 +121,7 @@ angular.module('lpApp')
 
             getAboutAppStrings: {
                 title: 'About',
-                description: 'This app displays and launches applications using the DreamFactory Services Platform.',
+                description: 'This app displays and launches applications using the DreamFactory Services Platform.'
             },
 
             getCopyrightStrings: {
