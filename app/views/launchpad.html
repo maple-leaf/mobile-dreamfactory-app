@@ -2,20 +2,21 @@
     <div class="row">
         <div class="centered">
             <div class="tiles-container">
-                <page-header title="pageText.title" group="pageText.group" description="pageText.description"></page-header>
+                <page-header title="pageText.title" group="pageText.group"
+                             description="pageText.description"></page-header>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="centered">
-            <swiper hm-swipeleft="swipeLeft()" hm-swiperight="swipeRight()">
+            <swiper hm-options="{prevent_default: true, drag_max_touches: 1, drag_min_distance: .1}"
+                    hm-swipeleft="swipeLeft()" hm-swiperight="swipeRight()">
                 <div class="tiles-container">
                     <ng-include src="'views/utility/lists/groups-list-links.html'"></ng-include>
                 </div>
             </swiper>
         </div>
     </div>
-
 </div>
 
 
