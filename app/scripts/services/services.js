@@ -649,7 +649,7 @@ angular.module('lpApp')
         }
 
     }])
-    .factory('UserService', ['$resource', '$q', 'AppStorageService', function($resource, $q, AppStorageService) {
+    .factory('UserService', ['$resource', '$q', 'AppStorageService', function($resource) {
 
         return {
 
