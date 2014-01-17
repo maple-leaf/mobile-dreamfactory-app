@@ -28,8 +28,6 @@ angular.module('lpApp')
                 html += '</div>';
 
                 elem.append(html);
-
-
             }
         }
     }])
@@ -82,8 +80,7 @@ angular.module('lpApp')
                     btnHeight = element.outerHeight();
 
                 element.css({
-                    position: 'absolute',
-                    top: height - (btnHeight + 150)
+                    position: 'relative'
                 })
             }
         }
