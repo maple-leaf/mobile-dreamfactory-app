@@ -38,6 +38,11 @@ body {
   overflow: hidden;
 }
 
+p.negate {
+  padding: 0;
+  margin: 0;
+}
+
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   position: absolute;
@@ -592,6 +597,8 @@ indicator {
 
   }
 }
+
+
 
 /*
 

@@ -10,7 +10,7 @@ angular.module('lpApp')
                 group: '=group',
                 description: '=description'
             },
-            template:'<div class="pageText"><h2>{{title}}<small>{{group}}</small></h2><p>{{description}}</p></div>'
+            template:'<div class="pageText"><h2>{{title}}<small>{{group}}</small></h2><p data-ng-class="description ? \'\' : \'negate\'">{{description}}</p></div>'
         }
     }])
     .directive('profileBtns', [function() {
