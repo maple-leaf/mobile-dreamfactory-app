@@ -10,7 +10,27 @@ angular.module('lpApp')
                 group: '=group',
                 description: '=description'
             },
-            template:'<div class="pageText"><h2>{{title}}<small>{{group}}</small></h2><p data-ng-class="description ? \'\' : \'negate\'">{{description}}</p></div>'
+
+            link: function(scope, elem, attrs) {
+
+                var html = '<div id="page-header" class="pageText">';
+
+                if (scope.title) {
+
+                    html += '<h2>' + scope.title;
+                    if (scope.group) html += '<small>' + scope.group + '</small>';
+                    html += '</h2>'
+
+                }
+
+                if (scope.description) html += '<p>' + scope.description + '</p>';
+
+                html += '</div>';
+
+                elem.append(html);
+
+
+            }
         }
     }])
     .directive('profileBtns', [function() {
