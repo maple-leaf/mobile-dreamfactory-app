@@ -3,6 +3,8 @@
 
 var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTouchEvents'])
     .constant('APP_VERSION', '0.8.5')
+    .constant('DEFAULT_DSP_NAME', 'Demo DSP')
+    .constant('DEFAULT_DSP_URL', 'https://launchpad-demo.dreamfactory.com')
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/', {
@@ -34,19 +36,7 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
             })
             .when('/get-started', {
                 templateUrl: 'views/public/get-started.html',
-                controller: 'GetStartedCtrl',
-                resolve: {
-                    prefillDemoDSP: function() {
-
-                        // Set the values of the Demo DSP
-                        var demoDSP = {
-                            name: "Demo DSP",
-                            url: "https://next.cloud.dreamfactory.com"
-                        };
-
-                        return demoDSP;
-                    }
-                }
+                controller: 'GetStartedCtrl'
             })
             .when('/home', {
                 templateUrl:'views/public/home.html',

@@ -29,13 +29,16 @@ angular.module('lpApp')
             $location.replace().url('/get-started');
         });
     }])
-    .controller('GetStartedCtrl', ['$scope', '$rootScope', 'prefillDemoDSP',
-        function ($scope, $rootScope, prefillDemoDSP) {
+    .controller('GetStartedCtrl', ['$scope', '$rootScope', 'DEFAULT_DSP_NAME', 'DEFAULT_DSP_URL',
+        function ($scope, $rootScope, DEFAULT_DSP_NAME, DEFAULT_DSP_URL) {
 
             // Set App Location
             $rootScope.appLocation = 'Get Started';
 
-            $scope.demoDSP = prefillDemoDSP;
+            $scope.demoDSP = {
+                name: DEFAULT_DSP_NAME,
+                url : DEFAULT_DSP_URL
+            }
 
 
         }])
