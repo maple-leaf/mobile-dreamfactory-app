@@ -65,7 +65,6 @@ body {
   min-height: 100%;
   margin: 0 auto -85px;
   padding: 0 0 85px;
-  overflow-x: hidden;
 }
 
 /* line 59, ../sass/partials/_base.scss */
