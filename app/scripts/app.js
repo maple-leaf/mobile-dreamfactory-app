@@ -13,7 +13,7 @@
 var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTouchEvents'])
 
     // App Version
-    .constant('APP_VERSION', '0.8.5')
+    .constant('APP_VERSION', '0.8.6')
 
     // Default name that is used to populate the 'Get Started' page's DSP name field.
     .constant('DEFAULT_DSP_NAME', 'Demo DSP')
