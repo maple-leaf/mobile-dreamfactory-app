@@ -129,8 +129,8 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
             })
             .when('/go-to-dsp/:dsp', {
                 resolve: {
-                    getDSPConfig: ['$route', '$q', '$location', 'AppStorageService', 'UserService', 'MessageService',
-                        function ($route, $q, $location, AppStorageService, UserService, MessageService) {
+                    getDSPConfig: ['$route', '$q', '$location', 'AppStorageService', 'UserService', 'MessageService', 'LoadingScreenService',
+                        function ($route, $q, $location, AppStorageService, UserService, MessageService, LoadingScreenService) {
 
                             // Get the currently selected DSP info out of our localStorage
                             var dsp = AppStorageService.DSP.get($route.current.params.dsp);
@@ -162,11 +162,11 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
 
 
                             // This function is called below.
-                            // It will retrieve our guest session which will contain
-                            // what apps we have access to as a guest/unregistered user.
+                            // It will retrieve our session which will contain
+                            // what apps we have access to.
                             // Use deferred because we have to operate on that data when
                             // it comes back.  No fire and forget here.
-                            function _guestLogin () {
+                            function _goDSP () {
 
                                 var defer = $q.defer();
 
@@ -182,14 +182,17 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                                 return defer.promise;
                             }
 
-                            // We allow guests.  Let's get the guest information
-                            // and setup the dsp for guest access.
+                            // We allow guests or are already logged in.  Let's get the user information
+                            // and setup the dsp for access.
                             // First, we set the url for the DSP we will make a call to
                             UserService.currentDSPUrl = dsp.url;
 
-                            // Then grab our guest session and store some info
+                            // Start the loading screen
+                            LoadingScreenService.start("Loading");
+
+                            // Then grab our session and store some info
                             // about what we're doing in the browser sessionStorage
-                            _guestLogin().then(function (result) {
+                            _goDSP().then(function (result) {
 
                                     // Store some info about our user
                                     // We store the session id to use in our http header.
@@ -202,8 +205,8 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                                     AppStorageService.URL.save(dsp);
 
                                     // We store the result from our async call(which was deferred)
-                                    // in a variable called 'user' as it contains 'Guest User' information.
-                                    // See description of _guestLogin function above
+                                    // in a variable called 'user' as it contains 'User' information.
+                                    // See description of _goDSP function above
                                     dsp['user'] = result;
 
                                     // This requires the dsp.user property we just assigned to sort, group,
@@ -213,6 +216,10 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                                     // We also save the current DSP Config so we can reference it quickly
                                     AppStorageService.Config.save(dsp);
 
+
+                                    // Stop loading screen.  The program is done working.
+                                    LoadingScreenService.stop();
+
                                     // Last but not least...let's go see what we've loaded in launchpad
                                     $location.url('/launchpad');
 
@@ -220,6 +227,10 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                                     return false;
                                 },
                                 function(reason) {
+
+
+                                    // Stop loading screen.  The program is done working.
+                                    LoadingScreenService.stop();
 
                                     // There was an error
                                     // Alert the user

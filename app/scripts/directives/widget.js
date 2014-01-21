@@ -207,6 +207,12 @@ angular.module('lpApp')
                     scope.currentPanel--
                     scope.$emit('panel:down');
                 };
+
+                scope.swipeDown = function() {
+
+                    scope.$emit('swipe:down');
+
+                }
             }
         }
     }]);

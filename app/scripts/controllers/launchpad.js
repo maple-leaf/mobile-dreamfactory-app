@@ -76,6 +76,12 @@ angular.module('lpApp')
                 $scope._launchAppDetail(group, app);
             });
 
+            $scope.$on('swipe:down', function(e) {
+                console.log(getDSPInfo);
+
+                $location.replace().url('/go-to-dsp/' + getDSPInfo.id);
+            })
+
 
         }])
     .controller('LaunchPadGroupCtrl', ['$scope', '$rootScope', '$location', 'getApps', 'getDSPInfo', 'AppLaunchService', 'AppStrings', 'ObjectService', 'UIScrollService',
