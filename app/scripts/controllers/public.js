@@ -9,6 +9,10 @@ angular.module('lpApp')
                 return false;
             }
 
+            if (($rootScope.appLocation === 'Login') && ($rootScope.guestUser === false)) {
+                return false;
+            }
+
             history.back();
         }
     }])
@@ -502,6 +506,16 @@ angular.module('lpApp')
             // Facade for the ui.  Corresponds to ng-click/ng-submit functions
             // This should be self explanatory
             $scope.getDSP = function (dsp) {
+
+                if (!dsp.name) {
+                    throw {message: "You must provide a name for your DSP."}
+                }
+
+                if (!dsp.url) {
+                    throw {message: "You must provide a valid url starting with 'http' or 'https'."}
+                }
+
+
                 $scope.$broadcast('dsp:get', dsp);
             };
 
@@ -553,6 +567,12 @@ angular.module('lpApp')
 
                         // Stop loading screen.  The program is done working.
                         LoadingScreenService.stop();
+
+                        // Set global guest user variable
+                        if (!dsp.config.allow_guest_user) {
+                            $rootScope.guestUser = false;
+                        }
+
 
                         // and redirect back to the root(this will work out redirecting to /launchpad)
                         if ($rootScope.authenticated === true) {

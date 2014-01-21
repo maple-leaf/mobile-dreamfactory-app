@@ -92,7 +92,8 @@
                             </li>
                         </a>
 
-                        <a href="#/launchpad">
+                        <!-- Home Button.  Visible if guest or signed in -->
+                        <a  data-ng-show="authenticated || guestUser" href="#/launchpad">
                             <li class="col-xs-2">
                                 <p><i class="fa fa-home fa-1-7"></i></p>
 
@@ -101,6 +102,7 @@
                         </a>
 
                         <!-- Guest DSP Navigation.  Visible under guest login -->
+
                         <a data-ng-show="guestUser" href="#/login">
                             <li class="col-xs-2">
                                 <p><i class="fa fa-sign-in fa-1-7"></i></p>
@@ -110,6 +112,7 @@
                         </a>
 
                         <!-- Signed in user DSP navigation.  Visible when signed in to DSP -->
+
                         <a data-ng-show="authenticated" href="#/profile">
                             <li class="col-xs-2">
                                 <p><i class="fa fa-user fa-1-7"></i></p>

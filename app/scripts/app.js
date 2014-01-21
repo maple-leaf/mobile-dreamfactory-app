@@ -1,14 +1,39 @@
 'use strict';
 
+// This is our app router.  Lots of interesting stuff happens here.
+// This defines the routes and preloads data for those routes.
+// It also helps handle setting headers for requests among other app functions.
+
+// First we define our top level app module and include a few sub modules
+// ngAnimate - for animating
+// ngRoute - for, obviously, routing
+// ngResource - for using the DreamFactory Services platform
+// hmTouchEvents - which is an angular Hammer JS module for swipe
 
 var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTouchEvents'])
+
+    // App Version
     .constant('APP_VERSION', '0.8.5')
+
+    // Default name that is used to populate the 'Get Started' page's DSP name field.
     .constant('DEFAULT_DSP_NAME', 'Demo DSP')
+
+    // Default url that is used to populate the 'Get Started' page's DSP url field
     .constant('DEFAULT_DSP_URL', 'https://launchpad-demo.dreamfactory.com')
+
+    // This is the router.  It takes care of all the links inside the app.
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
+
+            // The base route is very simple.  It checks to see if you have setup a DSP.  If not
+            // It routes to the 'Welcome' page.
+            // If you do have a DSP setup it routes you to '/go-to-dsp/:dsp' which sets everything up
+            // for the current DSP
             .when('/', {
                 resolve: {
+
+                    // We store all our info through a service called 'AppStorageService'.
+                    // For more info on this service see 'app/scripts/services/services.js'.
                     hasDSP: ['$location', 'AppStorageService', function($location, AppStorageService){
 
                         // First we'll grab a reference to the current DSP
@@ -30,14 +55,22 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                     }]
                 }
             })
+
+            // This routes the Welcome page.  It's pretty boring as there isn't much going on.
+            // A lot of what happens here is taken care of through the template
             .when('/welcome', {
                 templateUrl: 'views/public/welcome.html',
                 controller: 'WelcomeCtrl'
             })
+
+            // This routes the Get Started page.  Pretty boring as well.
             .when('/get-started', {
                 templateUrl: 'views/public/get-started.html',
                 controller: 'GetStartedCtrl'
             })
+            // We no longer use the Home route.
+            // remove this
+            /*
             .when('/home', {
                 templateUrl:'views/public/home.html',
                 controller: 'HomeCtrl',
@@ -91,13 +124,27 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                     }]
                 }
             })
+            */
+
+            // This routes to app settings.  Boring again.
+
             .when('/app-settings', {
                 templateUrl: 'views/public/settings/app-settings.html',
                 controller: 'AppSettingsCtrl'
             })
+
+            // No longer used
+            // remove this
+            /*
             .when('/dsp-settings', {
                 templateUrl: 'views/public/settings/dsp-settings.html',
                 controller: 'DSPListCtrl',
+
+                // This resolves data before the route is completed.  What does this mean?
+                // In this case we inject the AppStorageService.  Then we ask it to get
+                // all the info about our currently stored DSP.  It does nad we return that
+                // for use in the controller.  Now that data is ready for use as soon as the
+                // controller loads.
                 resolve: {
 
                     getDSPList:['AppStorageService', function(AppStorageService) {
@@ -106,12 +153,23 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                     }]
                 }
             })
+
+            */
+
+
             .when('/dsp-settings/:dsp', {
                 templateUrl: 'views/public/settings/dsp-settings-expand.html',
                 controller: 'DSPSettingsCtrl',
+
+                // This resolves data before the route is completed.  What does this mean?
+                // In this case we inject the AppStorageService.  Then we ask it to get
+                // all the info about our currently stored DSP.  It does and we return that
+                // for use in the controller.  Now that data is ready for use as soon as the
+                // controller loads.
                 resolve: {
 
-                    getDSP:['$route', '$q', 'SystemService', 'AppStorageService', function($route, $q, SystemService, AppStorageService) {
+                    // For more info on this service see 'app/scripts/services/services.js'.
+                    getDSP:['$route', 'AppStorageService', function($route, AppStorageService) {
 
                         return AppStorageService.DSP.get($route.current.params.dsp);
                     }]
@@ -121,6 +179,8 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                 templateUrl: 'views/public/connect-to-dsp.html',
                 controller: 'ConnectDSPCtrl',
                 resolve: {
+
+                    // For more info on this service see 'app/scripts/services/services.js'.
                     getAllDSPs: ['AppStorageService', function(AppStorageService) {
 
                       return AppStorageService.DSP.getAll();
@@ -276,7 +336,7 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                             $http.defaults.headers.common['X-DreamFactory-Session-Token'] = '';
                             UserService.reset();
                             $rootScope.authenticated = false;
-                            $rootScope.guestUser = true;
+                            $rootScope.guestUser = false;
                             $location.path('/');
                     }]
                 }
