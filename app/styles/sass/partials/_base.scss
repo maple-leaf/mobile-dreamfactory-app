@@ -5,6 +5,7 @@
 $tilesize: 100px;
 
 
+
 #main-app-container {
   margin: auto auto -60px;
 }
@@ -25,11 +26,12 @@ body {
 
 
   // needs latest Compass, add '@import "compass"' to your scss
-  background-color: rgb(0,40,122); // Old browsers
-  @include filter-gradient(#00287a, #34ba23, vertical); // IE6-8
+  background-color: rgb(255,167,25); // Old browsers
+  @include filter-gradient(#ffa719, #a30303, vertical); // IE6-8
   // IE9 SVG, needs conditional override of 'filter' to 'none'
   $experimental-support-for-svg: true;
-  @include background-image(linear-gradient(top,  rgba(0,40,122,1) 0%,rgba(52,186,35,1) 100%));
+  @include background-image(linear-gradient(top,  rgba(255,167,25,1) 0%,rgba(163,3,3,1) 100%));
+
 
   font-size: 12px;
   height: 100%;

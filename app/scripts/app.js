@@ -19,7 +19,7 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
     .constant('DEFAULT_DSP_NAME', 'Demo DSP')
 
     // Default url that is used to populate the 'Get Started' page's DSP url field
-    .constant('DEFAULT_DSP_URL', 'https://launchpad-demo.dreamfactory.com')
+    .constant('DEFAULT_DSP_URL', 'https://next.cloud.dreamfactory.com')
 
     // This is the router.  It takes care of all the links inside the app.
     .config(['$routeProvider', function ($routeProvider) {
