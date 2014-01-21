@@ -304,7 +304,8 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                 resolve: {
                     getDSPId: ['$location', 'AppStorageService',
                         function($location, AppStorageService) {
-                            $location.replace().url('/login/' + AppStorageService.Config.get().id);
+                            $location.replace().url('/login/' + AppStorageService.DSP.currentDSP.getCurrentDSPId());
+
                     }]
                 }
             })
