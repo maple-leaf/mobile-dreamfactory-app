@@ -228,6 +228,7 @@ angular.module('lpApp')
                     DSPList.platforms[dsp.id] = dsp;
 
                     if (StorageService.localStorage.save('DSPList', DSPList)) {
+                        console.log(dsp);
                         return dsp;
                     }
 
