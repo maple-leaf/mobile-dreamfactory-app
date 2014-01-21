@@ -77,7 +77,6 @@ angular.module('lpApp')
             });
 
             $scope.$on('swipe:down', function(e) {
-                console.log(getDSPInfo);
 
                 $location.replace().url('/go-to-dsp/' + getDSPInfo.id);
             })
