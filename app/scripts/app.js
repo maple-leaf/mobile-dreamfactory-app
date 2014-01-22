@@ -19,7 +19,7 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
     .constant('DEFAULT_DSP_NAME', 'Demo DSP')
 
     // Default url that is used to populate the 'Get Started' page's DSP url field
-    .constant('DEFAULT_DSP_URL', 'https://next.cloud.dreamfactory.com')
+    .constant('DEFAULT_DSP_URL', 'https://demo.cloud.dreamfactory.com')
 
     // This is the router.  It takes care of all the links inside the app.
     .config(['$routeProvider', function ($routeProvider) {
@@ -189,8 +189,8 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
             })
             .when('/go-to-dsp/:dsp', {
                 resolve: {
-                    getDSPConfig: ['$route', '$q', '$location', 'AppStorageService', 'UserService', 'MessageService', 'LoadingScreenService',
-                        function ($route, $q, $location, AppStorageService, UserService, MessageService, LoadingScreenService) {
+                    getDSPConfig: ['$route', '$q', '$location', '$rootScope', 'AppStorageService', 'UserService', 'MessageService', 'LoadingScreenService',
+                        function ($route, $q, $location, $rootScope, AppStorageService, UserService, MessageService, LoadingScreenService) {
 
                             // Get the currently selected DSP info out of our localStorage
                             var dsp = AppStorageService.DSP.get($route.current.params.dsp);
@@ -331,7 +331,6 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                     logout:['$location', '$rootScope', '$http', 'UserService', 'StorageService',
                         function($location, $rootScope, $http, UserService, StorageService) {
 
-
                             StorageService.sessionStorage.clear();
                             UserService.session().delete();
                             $http.defaults.headers.common['X-DreamFactory-Session-Token'] = '';
@@ -339,6 +338,7 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                             $rootScope.authenticated = false;
                             $rootScope.guestUser = false;
                             $location.path('/');
+
                     }]
                 }
             })
