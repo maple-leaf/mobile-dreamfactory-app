@@ -292,16 +292,14 @@ angular.module('lpApp')
                 },
 
                 User: {
-                    save: function(dsp) {
+                    save: function(dsp, user) {
                         var DSPList = StorageService.localStorage.get('DSPList');
 
-                        console.log(dsp);
 
                         if (DSPList.platforms[dsp.id]) {
 
-                            DSPList.platforms[dsp.id].User = {email: dsp.email};
-                            console.log(DSPList.platforms[dsp.id].User);
-
+                            DSPList.platforms[dsp.id].User = {email: user.email};
+                            
                             StorageService.localStorage.save('DSPList', DSPList);
                             return true;
                         }

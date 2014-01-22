@@ -139,8 +139,6 @@ angular.module('lpApp')
             $scope.pageText = ObjectService.extend(AppStrings.getLoginStrings, $scope.overridePageStrings);
             $scope.buttonsText = AppStrings.getButtonStrings;
 
-            console.log(getDSPConfig);
-
             $scope.currentDSP = getDSPConfig;
             $scope.user = {
                email: getDSPConfig.User.email || null
@@ -183,12 +181,10 @@ angular.module('lpApp')
                 UserService.currentDSPUrl = $scope.currentDSP.url;
                 $scope._userLogin(user).then(
                     function (result) {
-                        console.log(result);
 
                         LoadingScreenService.stop();
-
                         AppStorageService.User.save(result);
-                        AppStorageService.DSP.User.save(result);
+                        AppStorageService.DSP.User.save($scope.currentDSP, result);
                         AppStorageService.URL.save($scope.currentDSP);
                         $scope.currentDSP['user'] = result;
                         AppStorageService.Apps.save($scope.currentDSP);
