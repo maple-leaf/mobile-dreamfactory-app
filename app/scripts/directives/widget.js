@@ -191,7 +191,7 @@ angular.module('lpApp')
                         return;
                     }
 
-                    scope.currentPanel++
+                    scope.currentPanel++;
 
                     scope.$emit('panel:up');
                 };
@@ -204,7 +204,7 @@ angular.module('lpApp')
                         return;
                     }
 
-                    scope.currentPanel--
+                    scope.currentPanel--;
                     scope.$emit('panel:down');
                 };
 

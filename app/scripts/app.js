@@ -208,9 +208,9 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                             */
 
 
-                            // This is a different DSP.
+
                             // Do we need to be authorized to access?
-                            if (!dsp.config.allow_guest_user) {
+                            if ((!dsp.config.allow_guest_user) && (!$rootScope.authenticated)) {
 
                                 // Yes we do.  No guest users allowed
                                 // Render login page
