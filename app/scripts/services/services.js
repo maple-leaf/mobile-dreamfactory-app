@@ -226,9 +226,9 @@ angular.module('lpApp')
                     dsp.slug = StringService.makeSlug(dsp.name);
                     DSPList.platforms = DSPList.platforms || {};
                     DSPList.platforms[dsp.id] = dsp;
+                    DSPList.platforms[dsp.id].User = {};
 
                     if (StorageService.localStorage.save('DSPList', DSPList)) {
-                        console.log(dsp);
                         return dsp;
                     }
 
@@ -291,6 +291,41 @@ angular.module('lpApp')
                     }
                 },
 
+                User: {
+                    save: function(dsp) {
+                        var DSPList = StorageService.localStorage.get('DSPList');
+
+                        console.log(dsp);
+
+                        if (DSPList.platforms[dsp.id]) {
+
+                            DSPList.platforms[dsp.id].User = {email: dsp.email};
+                            console.log(DSPList.platforms[dsp.id].User);
+
+                            StorageService.localStorage.save('DSPList', DSPList);
+                            return true;
+                        }
+
+                        throw {message:'Unable to save ' + dsp.name + ' User settings'}
+
+                    },
+
+                    get: function(dspId) {
+
+                        var DSPList = StorageService.localStorage.get('DSPList');
+
+                        if (!DSPList.platforms) return false;
+
+                        if(DSPList.platforms[dspId]){
+                            return DSPList.platforms[dspId].User;
+                        }
+
+                        throw {message: 'Unable to find DSP' + dspId}
+
+
+                    }
+                },
+
                 /*
                 UISettings: {
 
@@ -309,6 +344,7 @@ angular.module('lpApp')
                 },
                 */
 
+                /*
                 UserSettings: {
 
                     save: function(dsp, settings) {
@@ -324,6 +360,7 @@ angular.module('lpApp')
 
                     }
                 },
+                */
 
                 CurrentDSP: {
 

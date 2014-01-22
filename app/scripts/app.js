@@ -328,15 +328,18 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
             })
             .when('/logout', {
                 resolve: {
-                    logout:['$location', '$rootScope', '$http', 'UserService', 'StorageService',
-                        function($location, $rootScope, $http, UserService, StorageService) {
+                    logout:['$location', '$rootScope', '$http', 'UserService', 'StorageService', 'NotificationService', 'LoadingScreenService',
+                        function($location, $rootScope, $http, UserService, StorageService, NotificationService, LoadingScreenService) {
 
+                            LoadingScreenService.start("Logging out...")
                             StorageService.sessionStorage.clear();
                             UserService.session().delete();
                             $http.defaults.headers.common['X-DreamFactory-Session-Token'] = '';
                             UserService.reset();
                             $rootScope.authenticated = false;
                             $rootScope.guestUser = false;
+                            LoadingScreenService.stop();
+                            NotificationService.alertDialog('You have successfully logged out.');
                             $location.path('/');
 
                     }]
