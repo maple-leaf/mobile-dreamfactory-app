@@ -299,7 +299,7 @@ angular.module('lpApp')
                         if (DSPList.platforms[dsp.id]) {
 
                             DSPList.platforms[dsp.id].User = {email: user.email};
-                            
+
                             StorageService.localStorage.save('DSPList', DSPList);
                             return true;
                         }
@@ -403,7 +403,12 @@ angular.module('lpApp')
                     }
 
                     if (StorageService.sessionStorage.save('User', User)) {
-                        return true;
+
+                        // Stop gap fix to remember user for a no-guest-access dsp
+                        if (StorageService.localStorage.save("User", User)){
+                            return true;
+
+                        }
                     }
 
                     throw {message:'Unable to set User ' + user.displayName}
@@ -412,7 +417,21 @@ angular.module('lpApp')
                 get: function() {
 
                     return StorageService.sessionStorage.get('User');
+                },
+
+                getLocalStoredUser: function() {
+                    return StorageService.localStorage.get('User');
+                },
+
+                deleteLocalStoredUser: function() {
+
+                    if(!StorageService.localStorage.get('User')) return true;
+
+                    StorageService.localStorage.remove('User');
+
+                    //throw {message: 'Locally stored user could not be deleted.'}
                 }
+
             },
 
             URL: {

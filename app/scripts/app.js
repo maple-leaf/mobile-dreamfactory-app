@@ -36,9 +36,11 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                     // For more info on this service see 'app/scripts/services/services.js'.
                     hasDSP: ['$location', 'AppStorageService', function($location, AppStorageService){
 
+
                         // First we'll grab a reference to the current DSP
                         // If there is no DSP the AppStorage method will return false;
                         var currentDSP = AppStorageService.DSP.CurrentDSP.getCurrentDSPId();
+
 
                         // Check if we have a current DSP set
                         if (currentDSP) {
@@ -189,8 +191,8 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
             })
             .when('/go-to-dsp/:dsp', {
                 resolve: {
-                    getDSPConfig: ['$route', '$q', '$location', '$rootScope', 'AppStorageService', 'UserService', 'MessageService', 'LoadingScreenService',
-                        function ($route, $q, $location, $rootScope, AppStorageService, UserService, MessageService, LoadingScreenService) {
+                    getDSPConfig: ['$http', '$route', '$q', '$location', '$rootScope', 'AppStorageService', 'UserService', 'MessageService', 'LoadingScreenService',
+                        function ($http, $route, $q, $location, $rootScope, AppStorageService, UserService, MessageService, LoadingScreenService) {
 
                             // Get the currently selected DSP info out of our localStorage
                             var dsp = AppStorageService.DSP.get($route.current.params.dsp);
@@ -207,17 +209,22 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                             }
                             */
 
+                            var storedUser = AppStorageService.User.getLocalStoredUser();
 
+                            // Do we need to be authorized to access?  If so have we already authenticated before?
+                            if ((!dsp.config.allow_guest_user) && (!storedUser.sessionId)) {
 
-                            // Do we need to be authorized to access?
-                            if ((!dsp.config.allow_guest_user) && (!$rootScope.authenticated)) {
-
-                                // Yes we do.  No guest users allowed
+                                // Yes we do.  No guest users allowed and we are not authenticated.
                                 // Render login page
                                 $location.replace().url('/login/' + dsp.id);
 
                                 // Stop Executing
                                 return false;
+                            }
+
+                            if ((!dsp.config.allow_guest_user) && (storedUser)) {
+
+                                $http.defaults.headers.common['X-DreamFactory-Session-Token'] = storedUser.sessionId;
                             }
 
 
@@ -292,6 +299,7 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
                                     // Stop loading screen.  The program is done working.
                                     LoadingScreenService.stop();
 
+                                    alert('asdfadsf');
                                     // There was an error
                                     // Alert the user
                                     throw {message: 'Unable to login: ' + MessageService.getFirstMessage(reason)}
@@ -328,18 +336,19 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
             })
             .when('/logout', {
                 resolve: {
-                    logout:['$location', '$rootScope', '$http', 'UserService', 'StorageService', 'NotificationService', 'LoadingScreenService',
-                        function($location, $rootScope, $http, UserService, StorageService, NotificationService, LoadingScreenService) {
+                    logout:['$location', '$rootScope', '$http', 'UserService', 'StorageService', 'AppStorageService', 'NotificationService', 'LoadingScreenService',
+                        function($location, $rootScope, $http, UserService, StorageService, AppStorageService, NotificationService, LoadingScreenService) {
 
                             LoadingScreenService.start("Logging out...")
                             StorageService.sessionStorage.clear();
                             UserService.session().delete();
                             $http.defaults.headers.common['X-DreamFactory-Session-Token'] = '';
+                            AppStorageService.User.deleteLocalStoredUser();
                             UserService.reset();
                             $rootScope.authenticated = false;
                             $rootScope.guestUser = false;
                             LoadingScreenService.stop();
-                            NotificationService.alertDialog('You have successfully logged out.');
+                            // NotificationService.alertDialog('You have successfully logged out.');
                             $location.path('/');
 
                     }]
@@ -533,7 +542,7 @@ var lpApp = angular.module('lpApp', ['ngAnimate', 'ngRoute', 'ngResource', 'hmTo
 
             var path = next.$$route.originalPath;
 
-            if (path === '/launchpad') {
+            if ((path === '/launchpad') || ((path === '/login/:dsp') && ($rootScope.guestUser === false))) {
                 EventHandler.addEvent(document, 'backbutton', exitApp);
             }
             else {

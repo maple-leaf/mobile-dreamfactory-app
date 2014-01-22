@@ -566,6 +566,16 @@ angular.module('lpApp')
                         // And we set it to the current DSP
                         AppStorageService.DSP.CurrentDSP.setCurrentDSP(AppStorageService.DSP.save(dsp));
 
+                        var storedUser = AppStorageService.User.getLocalStoredUser()
+
+                        // Wipe out other DSP stored user if any
+                        if(storedUser) {
+
+                            // Just call save with an empty object to overwrite
+                            // any saved data
+                            AppStorageService.User.deleteLocalStoredUser();
+                        }
+
                         // Stop loading screen.  The program is done working.
                         LoadingScreenService.stop();
 
