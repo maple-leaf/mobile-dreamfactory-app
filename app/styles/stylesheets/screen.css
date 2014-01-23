@@ -628,7 +628,7 @@ input:focus {
 
 /* line 447, ../sass/partials/_base.scss */
 swiper {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
