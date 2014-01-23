@@ -275,7 +275,7 @@ ul.mobile-dsp-list-tiles {
   text-align: left;
 
 
-  a {
+  .list {
     text-decoration: none;
 
     li.dummyTile {
@@ -459,8 +459,6 @@ indicator {
 
 
 .tiles-container-position {
-  position: absolute;
-  top: 0;
 
 }
 
@@ -473,6 +471,10 @@ indicator {
     width: 700px;
     margin: auto;
     text-align: left;
+  }
+
+  .panel-swipe {
+    width: 100%;
   }
 }
 
@@ -504,8 +506,83 @@ indicator {
     margin: auto;
     text-align: left;
     word-break: break-word;
-    position: absolute;
-    top: 0;
+
+    ul.mobile-dsp-list-tiles {
+
+      padding: 0;
+      margin: 0 auto;
+      text-align: left;
+
+
+      .list {
+        text-decoration: none;
+
+        li.dummyTile {
+
+          background: rgba(0,0,0,0);
+          opacity: 0 !important;
+        }
+
+        li.app{
+
+          background-color: $tileappbackgroundcolor;
+        }
+
+        li.group{
+
+          background-color: $tilegroupbackgroundcolor;
+        }
+
+        li.dsp{
+          background-color: $tiledspbackgroundcolor;
+        }
+
+        li {
+
+          list-style: none;
+          width: 85px;
+          height: 85px;
+          overflow: hidden;
+          display: inline-block;
+          margin: 5px;
+          padding: 5px;
+          vertical-align: top;
+          background: $tiledspbackgroundcolor;
+
+          border-radius: 3px 3px;
+
+          $sizer: 0;
+          $headingOneSize: 19px;
+          @for $i from 1 through 6 {
+
+            h#{$i} {
+              color: $tiletitlecolor;
+              margin: $tiletitlemargin;
+              font-size: $headingOneSize - $sizer;
+              $sizer: $sizer + 3;
+              min-height: 60px;
+            }
+          }
+
+          p {
+            font-weight: 200;
+            font-size: 10px;
+          }
+
+          .skinny {
+            font-weight: 300;
+          }
+
+          .fa {
+            color: $lightcolor;
+            position: relative;
+            top: 50px;
+            z-index: 5;
+          }
+
+        }
+      }
+    }
 
   }
 
@@ -528,84 +605,11 @@ indicator {
     border-radius: 3px;
   }
 
-  ul.mobile-dsp-list-tiles {
-
-    padding: 0;
-    margin: 0 auto;
-    text-align: left;
 
 
-    a {
-      text-decoration: none;
 
-      li.dummyTile {
 
-        background: rgba(0,0,0,0);
-        opacity: 0 !important;
-      }
 
-      li.app{
-
-        background-color: $tileappbackgroundcolor;
-      }
-
-      li.group{
-
-        background-color: $tilegroupbackgroundcolor;
-      }
-
-      li.dsp{
-        background-color: $tiledspbackgroundcolor;
-      }
-
-      li {
-
-        list-style: none;
-        width: 85px;
-        height: 85px;
-        overflow: hidden;
-        display: inline-block;
-        margin: 5px;
-        padding: 5px;
-        vertical-align: top;
-        background: $tiledspbackgroundcolor;
-
-        border-radius: 3px 3px;
-
-        $sizer: 0;
-        $headingOneSize: 19px;
-        @for $i from 1 through 6 {
-
-          h#{$i} {
-            color: $tiletitlecolor;
-            margin: $tiletitlemargin;
-            font-size: $headingOneSize - $sizer;
-            $sizer: $sizer + 3;
-            min-height: 60px;
-          }
-        }
-
-        p {
-          font-weight: 200;
-          font-size: 10px;
-        }
-
-        .skinny {
-          font-weight: 300;
-        }
-
-        .fa {
-          color: $lightcolor;
-          position: relative;
-          top: 50px;
-          z-index: 5;
-        }
-
-      }
-
-    }
-
-  }
 }
 
 

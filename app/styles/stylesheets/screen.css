@@ -426,28 +426,28 @@ ul.mobile-dsp-list-tiles {
   text-align: left;
 }
 /* line 278, ../sass/partials/_base.scss */
-ul.mobile-dsp-list-tiles a {
+ul.mobile-dsp-list-tiles .list {
   text-decoration: none;
 }
 /* line 281, ../sass/partials/_base.scss */
-ul.mobile-dsp-list-tiles a li.dummyTile {
+ul.mobile-dsp-list-tiles .list li.dummyTile {
   background: rgba(0, 0, 0, 0);
   opacity: 0 !important;
 }
 /* line 287, ../sass/partials/_base.scss */
-ul.mobile-dsp-list-tiles a li.app {
+ul.mobile-dsp-list-tiles .list li.app {
   background-color: rgba(255, 255, 255, 0.25);
 }
 /* line 292, ../sass/partials/_base.scss */
-ul.mobile-dsp-list-tiles a li.group {
+ul.mobile-dsp-list-tiles .list li.group {
   background-color: rgba(255, 255, 255, 0.25);
 }
 /* line 297, ../sass/partials/_base.scss */
-ul.mobile-dsp-list-tiles a li.dsp {
+ul.mobile-dsp-list-tiles .list li.dsp {
   background-color: rgba(255, 255, 255, 0.25);
 }
 /* line 301, ../sass/partials/_base.scss */
-ul.mobile-dsp-list-tiles a li {
+ul.mobile-dsp-list-tiles .list li {
   list-style: none;
   width: 100px;
   height: 100px;
@@ -460,58 +460,58 @@ ul.mobile-dsp-list-tiles a li {
   border-radius: 3px 3px;
 }
 /* line 319, ../sass/partials/_base.scss */
-ul.mobile-dsp-list-tiles a li h1 {
+ul.mobile-dsp-list-tiles .list li h1 {
   color: white;
   margin: 0;
   font-size: 22px;
   min-height: 60px;
 }
 /* line 319, ../sass/partials/_base.scss */
-ul.mobile-dsp-list-tiles a li h2 {
+ul.mobile-dsp-list-tiles .list li h2 {
   color: white;
   margin: 0;
   font-size: 19px;
   min-height: 60px;
 }
 /* line 319, ../sass/partials/_base.scss */
-ul.mobile-dsp-list-tiles a li h3 {
+ul.mobile-dsp-list-tiles .list li h3 {
   color: white;
   margin: 0;
   font-size: 16px;
   min-height: 60px;
 }
 /* line 319, ../sass/partials/_base.scss */
-ul.mobile-dsp-list-tiles a li h4 {
+ul.mobile-dsp-list-tiles .list li h4 {
   color: white;
   margin: 0;
   font-size: 13px;
   min-height: 60px;
 }
 /* line 319, ../sass/partials/_base.scss */
-ul.mobile-dsp-list-tiles a li h5 {
+ul.mobile-dsp-list-tiles .list li h5 {
   color: white;
   margin: 0;
   font-size: 10px;
   min-height: 60px;
 }
 /* line 319, ../sass/partials/_base.scss */
-ul.mobile-dsp-list-tiles a li h6 {
+ul.mobile-dsp-list-tiles .list li h6 {
   color: white;
   margin: 0;
   font-size: 7px;
   min-height: 60px;
 }
 /* line 328, ../sass/partials/_base.scss */
-ul.mobile-dsp-list-tiles a li p {
+ul.mobile-dsp-list-tiles .list li p {
   font-weight: 200;
   font-size: 10px;
 }
 /* line 333, ../sass/partials/_base.scss */
-ul.mobile-dsp-list-tiles a li .skinny {
+ul.mobile-dsp-list-tiles .list li .skinny {
   font-weight: 300;
 }
 /* line 337, ../sass/partials/_base.scss */
-ul.mobile-dsp-list-tiles a li .fa {
+ul.mobile-dsp-list-tiles .list li .fa {
   color: white;
   position: relative;
   top: 50px;
@@ -641,29 +641,28 @@ indicator {
   margin: auto;
 }
 
-/* line 461, ../sass/partials/_base.scss */
-.tiles-container-position {
-  position: absolute;
-  top: 0;
-}
-
 @media screen and (max-width: 992px) {
-  /* line 472, ../sass/partials/_base.scss */
+  /* line 470, ../sass/partials/_base.scss */
   .tiles-container {
     width: 700px;
     margin: auto;
     text-align: left;
   }
+
+  /* line 476, ../sass/partials/_base.scss */
+  .panel-swipe {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 768px) {
-  /* line 484, ../sass/partials/_base.scss */
+  /* line 486, ../sass/partials/_base.scss */
   .tiles-container {
     width: 460px;
     margin: auto;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 492, ../sass/partials/_base.scss */
+  /* line 494, ../sass/partials/_base.scss */
   .tiles-container {
     width: 340px;
     margin: auto;
@@ -671,67 +670,42 @@ indicator {
   }
 }
 @media screen and (max-width: 320px) {
-  /* line 502, ../sass/partials/_base.scss */
+  /* line 504, ../sass/partials/_base.scss */
   .tiles-container {
     width: 295px;
     margin: auto;
     text-align: left;
     word-break: break-word;
-    position: absolute;
-    top: 0;
   }
-
-  /* line 512, ../sass/partials/_base.scss */
-  body {
-    font-size: 10px;
-  }
-
-  /* line 516, ../sass/partials/_base.scss */
-  .btn-lg {
-    padding: 5px 10px;
-    font-size: 12px;
-    line-height: 1.5;
-    border-radius: 3px;
-  }
-
-  /* line 523, ../sass/partials/_base.scss */
-  .input-lg {
-    height: 30px;
-    padding: 5px 10px;
-    font-size: 12px;
-    line-height: 1.5;
-    border-radius: 3px;
-  }
-
-  /* line 531, ../sass/partials/_base.scss */
-  ul.mobile-dsp-list-tiles {
+  /* line 510, ../sass/partials/_base.scss */
+  .tiles-container ul.mobile-dsp-list-tiles {
     padding: 0;
     margin: 0 auto;
     text-align: left;
   }
-  /* line 538, ../sass/partials/_base.scss */
-  ul.mobile-dsp-list-tiles a {
+  /* line 517, ../sass/partials/_base.scss */
+  .tiles-container ul.mobile-dsp-list-tiles .list {
     text-decoration: none;
   }
-  /* line 541, ../sass/partials/_base.scss */
-  ul.mobile-dsp-list-tiles a li.dummyTile {
+  /* line 520, ../sass/partials/_base.scss */
+  .tiles-container ul.mobile-dsp-list-tiles .list li.dummyTile {
     background: rgba(0, 0, 0, 0);
     opacity: 0 !important;
   }
-  /* line 547, ../sass/partials/_base.scss */
-  ul.mobile-dsp-list-tiles a li.app {
+  /* line 526, ../sass/partials/_base.scss */
+  .tiles-container ul.mobile-dsp-list-tiles .list li.app {
     background-color: rgba(255, 255, 255, 0.25);
   }
-  /* line 552, ../sass/partials/_base.scss */
-  ul.mobile-dsp-list-tiles a li.group {
+  /* line 531, ../sass/partials/_base.scss */
+  .tiles-container ul.mobile-dsp-list-tiles .list li.group {
     background-color: rgba(255, 255, 255, 0.25);
   }
-  /* line 557, ../sass/partials/_base.scss */
-  ul.mobile-dsp-list-tiles a li.dsp {
+  /* line 536, ../sass/partials/_base.scss */
+  .tiles-container ul.mobile-dsp-list-tiles .list li.dsp {
     background-color: rgba(255, 255, 255, 0.25);
   }
-  /* line 561, ../sass/partials/_base.scss */
-  ul.mobile-dsp-list-tiles a li {
+  /* line 540, ../sass/partials/_base.scss */
+  .tiles-container ul.mobile-dsp-list-tiles .list li {
     list-style: none;
     width: 85px;
     height: 85px;
@@ -743,63 +717,85 @@ indicator {
     background: rgba(255, 255, 255, 0.25);
     border-radius: 3px 3px;
   }
-  /* line 579, ../sass/partials/_base.scss */
-  ul.mobile-dsp-list-tiles a li h1 {
+  /* line 558, ../sass/partials/_base.scss */
+  .tiles-container ul.mobile-dsp-list-tiles .list li h1 {
     color: white;
     margin: 0;
     font-size: 19px;
     min-height: 60px;
   }
-  /* line 579, ../sass/partials/_base.scss */
-  ul.mobile-dsp-list-tiles a li h2 {
+  /* line 558, ../sass/partials/_base.scss */
+  .tiles-container ul.mobile-dsp-list-tiles .list li h2 {
     color: white;
     margin: 0;
     font-size: 16px;
     min-height: 60px;
   }
-  /* line 579, ../sass/partials/_base.scss */
-  ul.mobile-dsp-list-tiles a li h3 {
+  /* line 558, ../sass/partials/_base.scss */
+  .tiles-container ul.mobile-dsp-list-tiles .list li h3 {
     color: white;
     margin: 0;
     font-size: 13px;
     min-height: 60px;
   }
-  /* line 579, ../sass/partials/_base.scss */
-  ul.mobile-dsp-list-tiles a li h4 {
+  /* line 558, ../sass/partials/_base.scss */
+  .tiles-container ul.mobile-dsp-list-tiles .list li h4 {
     color: white;
     margin: 0;
     font-size: 10px;
     min-height: 60px;
   }
-  /* line 579, ../sass/partials/_base.scss */
-  ul.mobile-dsp-list-tiles a li h5 {
+  /* line 558, ../sass/partials/_base.scss */
+  .tiles-container ul.mobile-dsp-list-tiles .list li h5 {
     color: white;
     margin: 0;
     font-size: 7px;
     min-height: 60px;
   }
-  /* line 579, ../sass/partials/_base.scss */
-  ul.mobile-dsp-list-tiles a li h6 {
+  /* line 558, ../sass/partials/_base.scss */
+  .tiles-container ul.mobile-dsp-list-tiles .list li h6 {
     color: white;
     margin: 0;
     font-size: 4px;
     min-height: 60px;
   }
-  /* line 588, ../sass/partials/_base.scss */
-  ul.mobile-dsp-list-tiles a li p {
+  /* line 567, ../sass/partials/_base.scss */
+  .tiles-container ul.mobile-dsp-list-tiles .list li p {
     font-weight: 200;
     font-size: 10px;
   }
-  /* line 593, ../sass/partials/_base.scss */
-  ul.mobile-dsp-list-tiles a li .skinny {
+  /* line 572, ../sass/partials/_base.scss */
+  .tiles-container ul.mobile-dsp-list-tiles .list li .skinny {
     font-weight: 300;
   }
-  /* line 597, ../sass/partials/_base.scss */
-  ul.mobile-dsp-list-tiles a li .fa {
+  /* line 576, ../sass/partials/_base.scss */
+  .tiles-container ul.mobile-dsp-list-tiles .list li .fa {
     color: white;
     position: relative;
     top: 50px;
     z-index: 5;
+  }
+
+  /* line 589, ../sass/partials/_base.scss */
+  body {
+    font-size: 10px;
+  }
+
+  /* line 593, ../sass/partials/_base.scss */
+  .btn-lg {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+  }
+
+  /* line 600, ../sass/partials/_base.scss */
+  .input-lg {
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
   }
 }
   /*

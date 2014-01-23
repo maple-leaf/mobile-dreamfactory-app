@@ -55,22 +55,22 @@
 -->
         <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
         <ul class="mobile-dsp-list-tiles panel-swipe" id="panel-{{panel.current}}" data-ng-repeat="panel in panelsObj.panels" data-ng-show="currentPanel === {{panel.current}}">
-            <a>
+            <div class="list" ng-if="panel.groups">
                 <li data-ng-repeat="group in panel.groups" data-ng-class="group.id ? 'group' : 'dummyTile'" hm-tap="singleTapGroup(group)">
                     <div>
                         <h3 class="skinny">{{group.name}}</h3>
                     </div>
                     <tile-icon icon="fa-folder"></tile-icon>
                 </li>
-            </a>
-            <a>
+            </div>
+            <div class="list" ng-if="panel.apps">
                 <li data-ng-repeat="app in panel.apps" data-ng-class="app.id ? 'app' : 'dummyTile'"  hm-tap="singleTapApp(app)" hm-hold="holdApp(app)" >
                     <div>
                         <h3 class="skinny">{{app.name}}</h3>
                     </div>
                     <tile-icon icon="fa-html5"></tile-icon>
                 </li>
-            </a>
+            </div>
         </ul>
             </div>
 

@@ -17,6 +17,7 @@ angular.module('lpApp')
             $scope.pageText = ObjectService.extend(AppStrings.getLaunchPadStrings, $scope.overridePageStrings);
 
             $scope.panelsObj = UIScrollService.divyUpApps(getGroups);
+            console.log($scope.panelsObj);
 
 
                 // PUBLIC API
