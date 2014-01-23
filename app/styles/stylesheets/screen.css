@@ -678,33 +678,37 @@ indicator {
     word-break: break-word;
   }
   /* line 510, ../sass/partials/_base.scss */
+  .tiles-container panel-swipe {
+    top: auto;
+  }
+  /* line 514, ../sass/partials/_base.scss */
   .tiles-container ul.mobile-dsp-list-tiles {
     padding: 0;
     margin: 0 auto;
     text-align: left;
   }
-  /* line 517, ../sass/partials/_base.scss */
+  /* line 521, ../sass/partials/_base.scss */
   .tiles-container ul.mobile-dsp-list-tiles .list {
     text-decoration: none;
   }
-  /* line 520, ../sass/partials/_base.scss */
+  /* line 524, ../sass/partials/_base.scss */
   .tiles-container ul.mobile-dsp-list-tiles .list li.dummyTile {
     background: rgba(0, 0, 0, 0);
     opacity: 0 !important;
   }
-  /* line 526, ../sass/partials/_base.scss */
+  /* line 530, ../sass/partials/_base.scss */
   .tiles-container ul.mobile-dsp-list-tiles .list li.app {
     background-color: rgba(255, 255, 255, 0.25);
   }
-  /* line 531, ../sass/partials/_base.scss */
+  /* line 535, ../sass/partials/_base.scss */
   .tiles-container ul.mobile-dsp-list-tiles .list li.group {
     background-color: rgba(255, 255, 255, 0.25);
   }
-  /* line 536, ../sass/partials/_base.scss */
+  /* line 540, ../sass/partials/_base.scss */
   .tiles-container ul.mobile-dsp-list-tiles .list li.dsp {
     background-color: rgba(255, 255, 255, 0.25);
   }
-  /* line 540, ../sass/partials/_base.scss */
+  /* line 544, ../sass/partials/_base.scss */
   .tiles-container ul.mobile-dsp-list-tiles .list li {
     list-style: none;
     width: 85px;
@@ -717,58 +721,58 @@ indicator {
     background: rgba(255, 255, 255, 0.25);
     border-radius: 3px 3px;
   }
-  /* line 558, ../sass/partials/_base.scss */
+  /* line 562, ../sass/partials/_base.scss */
   .tiles-container ul.mobile-dsp-list-tiles .list li h1 {
     color: white;
     margin: 0;
     font-size: 19px;
     min-height: 60px;
   }
-  /* line 558, ../sass/partials/_base.scss */
+  /* line 562, ../sass/partials/_base.scss */
   .tiles-container ul.mobile-dsp-list-tiles .list li h2 {
     color: white;
     margin: 0;
     font-size: 16px;
     min-height: 60px;
   }
-  /* line 558, ../sass/partials/_base.scss */
+  /* line 562, ../sass/partials/_base.scss */
   .tiles-container ul.mobile-dsp-list-tiles .list li h3 {
     color: white;
     margin: 0;
     font-size: 13px;
     min-height: 60px;
   }
-  /* line 558, ../sass/partials/_base.scss */
+  /* line 562, ../sass/partials/_base.scss */
   .tiles-container ul.mobile-dsp-list-tiles .list li h4 {
     color: white;
     margin: 0;
     font-size: 10px;
     min-height: 60px;
   }
-  /* line 558, ../sass/partials/_base.scss */
+  /* line 562, ../sass/partials/_base.scss */
   .tiles-container ul.mobile-dsp-list-tiles .list li h5 {
     color: white;
     margin: 0;
     font-size: 7px;
     min-height: 60px;
   }
-  /* line 558, ../sass/partials/_base.scss */
+  /* line 562, ../sass/partials/_base.scss */
   .tiles-container ul.mobile-dsp-list-tiles .list li h6 {
     color: white;
     margin: 0;
     font-size: 4px;
     min-height: 60px;
   }
-  /* line 567, ../sass/partials/_base.scss */
+  /* line 571, ../sass/partials/_base.scss */
   .tiles-container ul.mobile-dsp-list-tiles .list li p {
     font-weight: 200;
     font-size: 10px;
   }
-  /* line 572, ../sass/partials/_base.scss */
+  /* line 576, ../sass/partials/_base.scss */
   .tiles-container ul.mobile-dsp-list-tiles .list li .skinny {
     font-weight: 300;
   }
-  /* line 576, ../sass/partials/_base.scss */
+  /* line 580, ../sass/partials/_base.scss */
   .tiles-container ul.mobile-dsp-list-tiles .list li .fa {
     color: white;
     position: relative;
@@ -776,12 +780,12 @@ indicator {
     z-index: 5;
   }
 
-  /* line 589, ../sass/partials/_base.scss */
+  /* line 593, ../sass/partials/_base.scss */
   body {
     font-size: 10px;
   }
 
-  /* line 593, ../sass/partials/_base.scss */
+  /* line 597, ../sass/partials/_base.scss */
   .btn-lg {
     padding: 5px 10px;
     font-size: 12px;
@@ -789,7 +793,7 @@ indicator {
     border-radius: 3px;
   }
 
-  /* line 600, ../sass/partials/_base.scss */
+  /* line 604, ../sass/partials/_base.scss */
   .input-lg {
     height: 30px;
     padding: 5px 10px;

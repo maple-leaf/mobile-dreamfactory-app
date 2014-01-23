@@ -507,6 +507,10 @@ indicator {
     text-align: left;
     word-break: break-word;
 
+    panel-swipe {
+      top: auto;
+    }
+
     ul.mobile-dsp-list-tiles {
 
       padding: 0;
