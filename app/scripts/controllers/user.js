@@ -2,8 +2,8 @@
 
 
 angular.module('lpApp')
-    .controller('ProfileCtrl', ['$scope', '$rootScope', 'userInfo', 'userApps', 'UserService', 'StringService', 'MessageService', 'AppStrings', 'ObjectService',
-        function ($scope, $rootScope, userInfo, userApps, UserService, StringService, MessageService, AppStrings, ObjectService) {
+    .controller('ProfileCtrl', ['$scope', '$rootScope', 'userInfo', 'userApps', 'NotificationService', 'UserService', 'StringService', 'MessageService', 'AppStrings', 'ObjectService',
+        function ($scope, $rootScope, userInfo, userApps, NotificationService, UserService, StringService, MessageService, AppStrings, ObjectService) {
 
             // Set Location Bar
             $rootScope.appLocation = 'Profile';
@@ -112,9 +112,13 @@ angular.module('lpApp')
                 try {
                     $scope._submitUserPassword(user);
                     $scope._submitUserInfo(user);
-                    $scope._resetUI();
+                    NotificationService.alertDialog("User profile saved.")
+
+                    //$scope._resetUI();
                 }
                 catch (err) {
+
+                    throw {message: "Unable to save user profile."}
 
                 }
 
