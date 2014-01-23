@@ -12,7 +12,10 @@
             <swiper hm-options="{prevent_default: true, drag_max_touches: 1, drag_min_distance: .1}"
                     hm-swipeleft="swipeLeft()" hm-swiperight="swipeRight()" hm-swipedown="swipeDown()">
                 <div class="tiles-container">
-                    <ng-include src="'views/utility/lists/groups-list-links.html'"></ng-include>
+                    <div class="col-xs-12 tiles-container-position">
+                        <ng-include src="'views/utility/lists/groups-list-links.html'"></ng-include>
+
+                    </div>
                 </div>
             </swiper>
         </div>

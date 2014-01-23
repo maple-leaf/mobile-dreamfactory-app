@@ -641,8 +641,14 @@ indicator {
   margin: auto;
 }
 
+/* line 461, ../sass/partials/_base.scss */
+.tiles-container-position {
+  position: absolute;
+  top: 0;
+}
+
 @media screen and (max-width: 992px) {
-  /* line 466, ../sass/partials/_base.scss */
+  /* line 472, ../sass/partials/_base.scss */
   .tiles-container {
     width: 700px;
     margin: auto;
@@ -650,14 +656,14 @@ indicator {
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 478, ../sass/partials/_base.scss */
+  /* line 484, ../sass/partials/_base.scss */
   .tiles-container {
     width: 460px;
     margin: auto;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 486, ../sass/partials/_base.scss */
+  /* line 492, ../sass/partials/_base.scss */
   .tiles-container {
     width: 340px;
     margin: auto;
@@ -665,7 +671,7 @@ indicator {
   }
 }
 @media screen and (max-width: 320px) {
-  /* line 496, ../sass/partials/_base.scss */
+  /* line 502, ../sass/partials/_base.scss */
   .tiles-container {
     width: 295px;
     margin: auto;
@@ -673,12 +679,12 @@ indicator {
     word-break: break-word;
   }
 
-  /* line 504, ../sass/partials/_base.scss */
+  /* line 510, ../sass/partials/_base.scss */
   body {
     font-size: 10px;
   }
 
-  /* line 508, ../sass/partials/_base.scss */
+  /* line 514, ../sass/partials/_base.scss */
   .btn-lg {
     padding: 5px 10px;
     font-size: 12px;
@@ -686,7 +692,7 @@ indicator {
     border-radius: 3px;
   }
 
-  /* line 515, ../sass/partials/_base.scss */
+  /* line 521, ../sass/partials/_base.scss */
   .input-lg {
     height: 30px;
     padding: 5px 10px;
@@ -695,34 +701,34 @@ indicator {
     border-radius: 3px;
   }
 
-  /* line 523, ../sass/partials/_base.scss */
+  /* line 529, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles {
     padding: 0;
     margin: 0 auto;
     text-align: left;
   }
-  /* line 530, ../sass/partials/_base.scss */
+  /* line 536, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a {
     text-decoration: none;
   }
-  /* line 533, ../sass/partials/_base.scss */
+  /* line 539, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li.dummyTile {
     background: rgba(0, 0, 0, 0);
     opacity: 0 !important;
   }
-  /* line 539, ../sass/partials/_base.scss */
+  /* line 545, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li.app {
     background-color: rgba(255, 255, 255, 0.25);
   }
-  /* line 544, ../sass/partials/_base.scss */
+  /* line 550, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li.group {
     background-color: rgba(255, 255, 255, 0.25);
   }
-  /* line 549, ../sass/partials/_base.scss */
+  /* line 555, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li.dsp {
     background-color: rgba(255, 255, 255, 0.25);
   }
-  /* line 553, ../sass/partials/_base.scss */
+  /* line 559, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li {
     list-style: none;
     width: 85px;
@@ -735,58 +741,58 @@ indicator {
     background: rgba(255, 255, 255, 0.25);
     border-radius: 3px 3px;
   }
-  /* line 571, ../sass/partials/_base.scss */
+  /* line 577, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li h1 {
     color: white;
     margin: 0;
     font-size: 19px;
     min-height: 60px;
   }
-  /* line 571, ../sass/partials/_base.scss */
+  /* line 577, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li h2 {
     color: white;
     margin: 0;
     font-size: 16px;
     min-height: 60px;
   }
-  /* line 571, ../sass/partials/_base.scss */
+  /* line 577, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li h3 {
     color: white;
     margin: 0;
     font-size: 13px;
     min-height: 60px;
   }
-  /* line 571, ../sass/partials/_base.scss */
+  /* line 577, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li h4 {
     color: white;
     margin: 0;
     font-size: 10px;
     min-height: 60px;
   }
-  /* line 571, ../sass/partials/_base.scss */
+  /* line 577, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li h5 {
     color: white;
     margin: 0;
     font-size: 7px;
     min-height: 60px;
   }
-  /* line 571, ../sass/partials/_base.scss */
+  /* line 577, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li h6 {
     color: white;
     margin: 0;
     font-size: 4px;
     min-height: 60px;
   }
-  /* line 580, ../sass/partials/_base.scss */
+  /* line 586, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li p {
     font-weight: 200;
     font-size: 10px;
   }
-  /* line 585, ../sass/partials/_base.scss */
+  /* line 591, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li .skinny {
     font-weight: 300;
   }
-  /* line 589, ../sass/partials/_base.scss */
+  /* line 595, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li .fa {
     color: white;
     position: relative;
