@@ -571,7 +571,7 @@ hr {
   -webkit-transform: translateZ(0);
   text-align: left;
   position: absolute;
-  top: 50px;
+  top: 100px;
 }
 
 /* line 417, ../sass/partials/_base.scss */
@@ -677,14 +677,16 @@ indicator {
     margin: auto;
     text-align: left;
     word-break: break-word;
+    position: absolute;
+    top: 0;
   }
 
-  /* line 510, ../sass/partials/_base.scss */
+  /* line 512, ../sass/partials/_base.scss */
   body {
     font-size: 10px;
   }
 
-  /* line 514, ../sass/partials/_base.scss */
+  /* line 516, ../sass/partials/_base.scss */
   .btn-lg {
     padding: 5px 10px;
     font-size: 12px;
@@ -692,7 +694,7 @@ indicator {
     border-radius: 3px;
   }
 
-  /* line 521, ../sass/partials/_base.scss */
+  /* line 523, ../sass/partials/_base.scss */
   .input-lg {
     height: 30px;
     padding: 5px 10px;
@@ -701,34 +703,34 @@ indicator {
     border-radius: 3px;
   }
 
-  /* line 529, ../sass/partials/_base.scss */
+  /* line 531, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles {
     padding: 0;
     margin: 0 auto;
     text-align: left;
   }
-  /* line 536, ../sass/partials/_base.scss */
+  /* line 538, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a {
     text-decoration: none;
   }
-  /* line 539, ../sass/partials/_base.scss */
+  /* line 541, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li.dummyTile {
     background: rgba(0, 0, 0, 0);
     opacity: 0 !important;
   }
-  /* line 545, ../sass/partials/_base.scss */
+  /* line 547, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li.app {
     background-color: rgba(255, 255, 255, 0.25);
   }
-  /* line 550, ../sass/partials/_base.scss */
+  /* line 552, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li.group {
     background-color: rgba(255, 255, 255, 0.25);
   }
-  /* line 555, ../sass/partials/_base.scss */
+  /* line 557, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li.dsp {
     background-color: rgba(255, 255, 255, 0.25);
   }
-  /* line 559, ../sass/partials/_base.scss */
+  /* line 561, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li {
     list-style: none;
     width: 85px;
@@ -741,58 +743,58 @@ indicator {
     background: rgba(255, 255, 255, 0.25);
     border-radius: 3px 3px;
   }
-  /* line 577, ../sass/partials/_base.scss */
+  /* line 579, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li h1 {
     color: white;
     margin: 0;
     font-size: 19px;
     min-height: 60px;
   }
-  /* line 577, ../sass/partials/_base.scss */
+  /* line 579, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li h2 {
     color: white;
     margin: 0;
     font-size: 16px;
     min-height: 60px;
   }
-  /* line 577, ../sass/partials/_base.scss */
+  /* line 579, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li h3 {
     color: white;
     margin: 0;
     font-size: 13px;
     min-height: 60px;
   }
-  /* line 577, ../sass/partials/_base.scss */
+  /* line 579, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li h4 {
     color: white;
     margin: 0;
     font-size: 10px;
     min-height: 60px;
   }
-  /* line 577, ../sass/partials/_base.scss */
+  /* line 579, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li h5 {
     color: white;
     margin: 0;
     font-size: 7px;
     min-height: 60px;
   }
-  /* line 577, ../sass/partials/_base.scss */
+  /* line 579, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li h6 {
     color: white;
     margin: 0;
     font-size: 4px;
     min-height: 60px;
   }
-  /* line 586, ../sass/partials/_base.scss */
+  /* line 588, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li p {
     font-weight: 200;
     font-size: 10px;
   }
-  /* line 591, ../sass/partials/_base.scss */
+  /* line 593, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li .skinny {
     font-weight: 300;
   }
-  /* line 595, ../sass/partials/_base.scss */
+  /* line 597, ../sass/partials/_base.scss */
   ul.mobile-dsp-list-tiles a li .fa {
     color: white;
     position: relative;
