@@ -1,5 +1,11 @@
 <div id="content">
-                <h1><a name="The%20Command-line%20Interface">The Command-line Interface</a></h1>
+               
+
+<h2>DreamFactory Mobile App UI</h2>
+
+Wrapping this or any other webapp can be done easily with Apache Cordova.
+
+<p>From the docs:</p>
 
 <p>This guide shows you how to create applications and deploy them to
 various native mobile platforms using the <code>cordova</code> command-line
@@ -12,7 +18,7 @@ various platforms' SDKs to develop them further.</p>
 
 <p>Before running any command-line tools, you need to install SDKs for
 each platform you wish to target.
-(See the <a href="guide_platforms_index.md.html#Platform%20Guides">Platform Guides</a> for more details.)</p>
+
 
 <p>To add support or rebuild a project for any platform, you need to run
 the command-line interface from the same machine that supports the
@@ -171,13 +177,13 @@ For example, you may first run the <code>android</code> command to launch the
 Android SDK, then run a particular device image, which launches it
 according to its default behavior:</p>
 
-<p><img src="img/guide/cli/android_emulate_init.png" alt="" title=""></p>
+
 
 <p>Following up with the <code>cordova emulate</code> command refreshes the emulator
 image to display the latest application, which is now available for
 launch from the home screen:</p>
 
-<p><img src="img/guide/cli/android_emulate_install.png" alt="" title=""></p>
+
 
 <p>Alternately, you can plug the handset into your computer and test the
 app directly:</p>
@@ -207,7 +213,7 @@ one of Cordova's basic device-level features
 <!-- XREF
 discussed in the Application Development Guide and
 XREF -->
-detailed in the <a href="index.md.html#API%20Reference">API Reference</a>.</p>
+detailed in the API Reference</a>.</p>
 
 <p>The <code>cordova plugin add</code> command requires you to specify the
 repository for the plugin code.  Here are examples of features you
