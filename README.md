@@ -3,6 +3,19 @@
 
 <h2>DreamFactory Mobile App UI</h2>
 
+This is a yeoman project, please have grunt and bower installed before continuing.
+
+<br/>
+To build the app:
+
+<ol>
+<li>npm install</li>
+<li>bower install</li>
+<li>grunt build</li>
+</ol>
+
+<p>The files generated in the new dist directory are the ones you want to copy to the www directory in your cordova project, detailed below.</p>
+
 Wrapping this or any other webapp can be done easily with Apache Cordova.
 
 <p>From the docs:</p>
