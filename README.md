@@ -1,3 +1,5 @@
+#####This app only works with DreamFactory 1.X. It will not work with DreamFactory 2.0 or later.
+
 <div id="content">
                
 
